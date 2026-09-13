@@ -1,0 +1,478 @@
+{
+  "production": {
+    "database": "production",
+    "db_file": "mplads_sentinel.db",
+    "total_rows": 92,
+    "known_id_used": "MPL-2026-00126",
+    "results": [
+      {
+        "name": "1. high_risk_works status 200",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "1. high_risk_works intent",
+        "status": "PASS",
+        "detail": "high_risk_works"
+      },
+      {
+        "name": "1. high_risk_works: no unsafe (non-negated) fraud/duplicate claims",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "1. production: real high-risk works returned",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "2. anomaly_analysis status 200",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "2. anomaly_analysis intent",
+        "status": "PASS",
+        "detail": "anomaly_analysis"
+      },
+      {
+        "name": "2. anomaly_analysis: no unsafe (non-negated) fraud/duplicate claims",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "18. anomaly_analysis: all returned works are actually flagged is_anomaly in DB",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "3. risk_explanation status 200",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "3. risk_explanation intent",
+        "status": "PASS",
+        "detail": "risk_explanation"
+      },
+      {
+        "name": "3. risk_explanation answer non-empty and no crash text",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "3. risk_explanation: no unsafe (non-negated) fraud/duplicate claims",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "17. risk_explanation: risk_score matches DB",
+        "status": "PASS",
+        "detail": "api=90 db=90"
+      },
+      {
+        "name": "17. risk_explanation: risk_level matches DB",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "4. similar_works status 200",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "4. similar_works intent",
+        "status": "PASS",
+        "detail": "similar_works"
+      },
+      {
+        "name": "4. similar_works: no unsafe (non-negated) fraud/duplicate claims",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "15. similar_works: no 'duplicate' claim in answer",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "16. similar_works: all returned IDs exist in DB",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "5. dashboard_summary status 200",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "5. dashboard_summary intent",
+        "status": "PASS",
+        "detail": "dashboard_summary"
+      },
+      {
+        "name": "5. dashboard_summary: no unsafe (non-negated) fraud/duplicate claims",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "5. dashboard_summary total_works matches DB",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "6. work_details status 200",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "6. work_details intent",
+        "status": "PASS",
+        "detail": "work_details"
+      },
+      {
+        "name": "6. work_details answer includes the work id",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "6. work_details: no unsafe (non-negated) fraud/duplicate claims",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "6b. 'Explain this work' (no id) intent still work_details",
+        "status": "PASS",
+        "detail": "work_details"
+      },
+      {
+        "name": "6b. asks for a work id rather than guessing one",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "7. nonexistent work status 200",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "13. nonexistent work: honest not-found, no fabricated work",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "13. nonexistent work: no data.work returned",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "8. state query status 200",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "8. state query intent is a real capability (not unsupported_query)",
+        "status": "PASS",
+        "detail": "work_search"
+      },
+      {
+        "name": "8. state query: no unsafe (non-negated) fraud/duplicate claims",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "9. status query status 200",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "9. status query does not crash / has an answer",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "10. out-of-scope status 200",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "10. out-of-scope intent classified as unsupported_query",
+        "status": "PASS",
+        "detail": "unsupported_query"
+      },
+      {
+        "name": "10. out-of-scope answer does not present dashboard stats",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "10. out-of-scope answer redirects to MPLADS scope",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "12. empty input handled without crash",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "12b. whitespace-only input handled without crash",
+        "status": "PASS",
+        "detail": null
+      }
+    ],
+    "passed": 43,
+    "total": 43,
+    "failures": [],
+    "generated_at": "2026-09-12T13:08:36.641788Z"
+  },
+  "staging": {
+    "database": "staging",
+    "db_file": "mplads_sentinel_staging.db",
+    "total_rows": 38265,
+    "known_id_used": "WS/MP005/2024-2025/145074",
+    "results": [
+      {
+        "name": "1. high_risk_works status 200",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "1. high_risk_works intent",
+        "status": "PASS",
+        "detail": "high_risk_works"
+      },
+      {
+        "name": "1. high_risk_works: no unsafe (non-negated) fraud/duplicate claims",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "1. staging: honest 0-High-risk phrasing",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "1. staging: gives Medium/Low context",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "2. anomaly_analysis status 200",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "2. anomaly_analysis intent",
+        "status": "PASS",
+        "detail": "anomaly_analysis"
+      },
+      {
+        "name": "2. anomaly_analysis: no unsafe (non-negated) fraud/duplicate claims",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "18. anomaly_analysis: all returned works are actually flagged is_anomaly in DB",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "3. risk_explanation status 200",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "3. risk_explanation intent",
+        "status": "PASS",
+        "detail": "risk_explanation"
+      },
+      {
+        "name": "3. risk_explanation answer non-empty and no crash text",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "3. risk_explanation: no unsafe (non-negated) fraud/duplicate claims",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "17. risk_explanation: risk_score matches DB",
+        "status": "PASS",
+        "detail": "api=20 db=20"
+      },
+      {
+        "name": "17. risk_explanation: risk_level matches DB",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "4. similar_works status 200",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "4. similar_works intent",
+        "status": "PASS",
+        "detail": "similar_works"
+      },
+      {
+        "name": "4. similar_works: no unsafe (non-negated) fraud/duplicate claims",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "15. similar_works: no 'duplicate' claim in answer",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "16. similar_works: all returned IDs exist in DB",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "5. dashboard_summary status 200",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "5. dashboard_summary intent",
+        "status": "PASS",
+        "detail": "dashboard_summary"
+      },
+      {
+        "name": "5. dashboard_summary: no unsafe (non-negated) fraud/duplicate claims",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "5. dashboard_summary total_works matches DB",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "9. staging: honest completion-rate caveat (real 'Completed' status differs from demo vocabulary)",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "6. work_details status 200",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "6. work_details intent",
+        "status": "PASS",
+        "detail": "work_details"
+      },
+      {
+        "name": "6. work_details answer includes the work id",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "6. work_details: no unsafe (non-negated) fraud/duplicate claims",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "6b. 'Explain this work' (no id) intent still work_details",
+        "status": "PASS",
+        "detail": "work_details"
+      },
+      {
+        "name": "6b. asks for a work id rather than guessing one",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "7. nonexistent work status 200",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "13. nonexistent work: honest not-found, no fabricated work",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "13. nonexistent work: no data.work returned",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "8. state query status 200",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "8. state query intent is a real capability (not unsupported_query)",
+        "status": "PASS",
+        "detail": "work_search"
+      },
+      {
+        "name": "8. state query: no unsafe (non-negated) fraud/duplicate claims",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "9. status query status 200",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "9. status query does not crash / has an answer",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "10. out-of-scope status 200",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "10. out-of-scope intent classified as unsupported_query",
+        "status": "PASS",
+        "detail": "unsupported_query"
+      },
+      {
+        "name": "10. out-of-scope answer does not present dashboard stats",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "10. out-of-scope answer redirects to MPLADS scope",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "11. slash-ID risk_explanation status 200",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "11. slash-ID correctly extracted and resolved",
+        "status": "PASS",
+        "detail": "got work_id=WS/MP005/2024-2025/145074"
+      },
+      {
+        "name": "12. empty input handled without crash",
+        "status": "PASS",
+        "detail": null
+      },
+      {
+        "name": "12b. whitespace-only input handled without crash",
+        "status": "PASS",
+        "detail": null
+      }
+    ],
+    "passed": 47,
+    "total": 47,
+    "failures": [],
+    "generated_at": "2026-09-12T13:08:46.126894Z"
+  },
+  "total_passed": 90,
+  "total_checks": 90
+}

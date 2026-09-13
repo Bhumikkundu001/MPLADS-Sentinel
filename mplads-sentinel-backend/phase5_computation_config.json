@@ -1,0 +1,33 @@
+{
+  "method_version": "tfidf_cosine_v1",
+  "computed_at": "2026-09-12T22:19:16.761512",
+  "n_real_works": 38265,
+  "top_n": 5,
+  "tfidf_config": {
+    "lowercase": true,
+    "stop_words": "english",
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 2,
+    "max_features": 20000,
+    "sublinear_tf": true
+  },
+  "vocabulary_size": 20000,
+  "matrix_shape": [
+    38265,
+    20000
+  ],
+  "matrix_nnz": 803617,
+  "metadata_bonus_weights": {
+    "category_bonus": 0.05,
+    "state_bonus": 0.03,
+    "house_bonus": 0.02,
+    "amount_bonus_max": 0.05,
+    "max_total_bonus": 0.15000000000000002
+  },
+  "empty_document_count": 0,
+  "records_with_fewer_than_top_n_matches": 0,
+  "relationships_stored": 191325
+}

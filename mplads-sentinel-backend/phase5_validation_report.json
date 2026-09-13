@@ -1,0 +1,1501 @@
+{
+  "total_real_works": 38265,
+  "similarity_source_records": 38265,
+  "self_similarity_count": 0,
+  "duplicate_source_target_pairs": 0,
+  "max_relationships_per_work": 5,
+  "works_with_more_than_5": 0,
+  "similarity_pct_min": 17.88,
+  "similarity_pct_max": 100.0,
+  "similarity_out_of_range_count": 0,
+  "null_similarity_scores": 0,
+  "demo_seed_ids_in_similarity_table": 0,
+  "similar_work_ids_not_found": 0,
+  "orphan_source_work_ids": 0,
+  "similarity_table_row_count": 191325,
+  "expected_max_row_count": 191325,
+  "same_house_relationships": 169844,
+  "cross_house_relationships": 21481,
+  "cross_house_pct": 11.23,
+  "determinism_check": {
+    "row_count_before": 191325,
+    "row_count_after": 191325,
+    "identical_shape": true,
+    "ids_match": true,
+    "max_similarity_score_diff": 0.0,
+    "deterministic": true
+  },
+  "production_untouched": {
+    "row_count": 92,
+    "expected": 92,
+    "ok": true
+  },
+  "manual_sanity_check_count": 24,
+  "manual_sanity_check_examples": [
+    {
+      "source_work": {
+        "id": "WS/MP078/2023-2024/13375",
+        "name": "Providing and Fixing of 02 Nos of Solar Light near the house of Gaffur Mohammad Vill. Beha, GP\u2026",
+        "house": "Rajya Sabha",
+        "state": "Himachal Pradesh",
+        "category": "Normal/Others"
+      },
+      "top_5_similar": [
+        {
+          "similar_work": {
+            "id": "WS/MP078/2023-2024/13599",
+            "name": "C/o culvert near the house of Jaan Mohamed, Rehmad Vill. Baloun G.P. Rangas, Dev. Block Nadaun,\u2026",
+            "house": "Rajya Sabha",
+            "state": "Himachal Pradesh",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 61.6
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP078/2023-2024/25352",
+            "name": "Installation and Fixing of 17 Nos of Solar Light At G.P. Batran, Dev. Block Nadaun, Distt. Hamirpur\u2026",
+            "house": "Rajya Sabha",
+            "state": "Himachal Pradesh",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 55.4
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP078/2023-2024/13595",
+            "name": "C/o L/R from the house of Reena Devi towards Khadli Village Gurehar, G.P. Kolha, Dev. Block Nadaun\u2026",
+            "house": "Rajya Sabha",
+            "state": "Himachal Pradesh",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 52.6
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP078/2023-2024/13597",
+            "name": "C/o Rain Shelter near Vetenery Centre at V & PO bhadrol Dev. Block Nadaun Distt. Hamirpur (HP)",
+            "house": "Rajya Sabha",
+            "state": "Himachal Pradesh",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 49.3
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP078/2023-2024/13578",
+            "name": "C/o L/R from main road to vill. Bakniyar, G.P. Bhated Dev. Block Bamson Distt. Hamirpur (HP)",
+            "house": "Rajya Sabha",
+            "state": "Himachal Pradesh",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 44.6
+        }
+      ]
+    },
+    {
+      "source_work": {
+        "id": "RS-SR-20002",
+        "name": "Public Place",
+        "house": "Rajya Sabha",
+        "state": "Uttar Pradesh",
+        "category": "Normal/Others"
+      },
+      "top_5_similar": [
+        {
+          "similar_work": {
+            "id": "RS-SR-19918",
+            "name": "Public Place",
+            "house": "Rajya Sabha",
+            "state": "Uttar Pradesh",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 100.0
+        },
+        {
+          "similar_work": {
+            "id": "RS-SR-19979",
+            "name": "Public Place",
+            "house": "Rajya Sabha",
+            "state": "Uttar Pradesh",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 100.0
+        },
+        {
+          "similar_work": {
+            "id": "RS-SR-19981",
+            "name": "Public Place",
+            "house": "Rajya Sabha",
+            "state": "Uttar Pradesh",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 100.0
+        },
+        {
+          "similar_work": {
+            "id": "RS-SR-20005",
+            "name": "Public Place",
+            "house": "Rajya Sabha",
+            "state": "Uttar Pradesh",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 100.0
+        },
+        {
+          "similar_work": {
+            "id": "RS-SR-19925",
+            "name": "Public Place",
+            "house": "Rajya Sabha",
+            "state": "Uttar Pradesh",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 100.0
+        }
+      ]
+    },
+    {
+      "source_work": {
+        "id": "WS/MP18265/2025-2026/154780",
+        "name": "To lay the Cement road in kotteri north street",
+        "house": "Lok Sabha",
+        "state": "Tamil Nadu",
+        "category": "Normal/Others"
+      },
+      "top_5_similar": [
+        {
+          "similar_work": {
+            "id": "WS/MP18265/2025-2026/154785",
+            "name": "To lay of Cement Road in Vengadampettai south stree",
+            "house": "Lok Sabha",
+            "state": "Tamil Nadu",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 97.8
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP18265/2024-2025/154817",
+            "name": "To Lay of Cement Road in vadakuthu Panchayat - PTR Nagar",
+            "house": "Lok Sabha",
+            "state": "Tamil Nadu",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 96.9
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP18265/2025-2026/154833",
+            "name": "To lay of Cement road in siruvathur panchayat - 2nd street",
+            "house": "Lok Sabha",
+            "state": "Tamil Nadu",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 95.6
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP18265/2025-2026/154905",
+            "name": "to lay of cement road in Adari panchayat in A Kalathur colony",
+            "house": "Lok Sabha",
+            "state": "Tamil Nadu",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 86.6
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP18265/2025-2026/154779",
+            "name": "To Lay the Cement Road - 200 mtrs in sathiyavadi village near thorupathi amman koil street",
+            "house": "Lok Sabha",
+            "state": "Tamil Nadu",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 82.5
+        }
+      ]
+    },
+    {
+      "source_work": {
+        "id": "WS/MP18225/2024-2025/144311",
+        "name": "Shiv Prasad Baba S/ Ram Dayal Ke Ghar ke Samne Handpump",
+        "house": "Lok Sabha",
+        "state": "Uttar Pradesh",
+        "category": "Normal/Others"
+      },
+      "top_5_similar": [
+        {
+          "similar_work": {
+            "id": "WS/MP18225/2024-2025/144743",
+            "name": "Shiv prasad S/o Bachai Lal, Emali gav ke ghar ke samne handpump",
+            "house": "Lok Sabha",
+            "state": "Uttar Pradesh",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 81.2
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP18225/2024-2025/144265",
+            "name": "Golideen S/o Ram Aasare ke Ghar ke samne Handpump",
+            "house": "Lok Sabha",
+            "state": "Uttar Pradesh",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 73.2
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP18225/2024-2025/144703",
+            "name": "Ramswroop S/o Bhaggi ke Ghar ke samne Handpump",
+            "house": "Lok Sabha",
+            "state": "Uttar Pradesh",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 70.2
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP18225/2024-2025/144237",
+            "name": "Madal La S/o Dulare ke Ghar ke samne Handpump",
+            "house": "Lok Sabha",
+            "state": "Uttar Pradesh",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 70.2
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP18225/2024-2025/144239",
+            "name": "Ram Payare Yadav S/o Bhagwandeen ke Ghar ke samne Handpump",
+            "house": "Lok Sabha",
+            "state": "Uttar Pradesh",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 67.9
+        }
+      ]
+    },
+    {
+      "source_work": {
+        "id": "WS/MP18177/2024-2025/149344",
+        "name": "Construction of Bathing Ghat at ward No:4 on the river bank behind Angalamman Temple in\u2026",
+        "house": "Lok Sabha",
+        "state": "Tamil Nadu",
+        "category": "Normal/Others"
+      },
+      "top_5_similar": [
+        {
+          "similar_work": {
+            "id": "WS/MP18074/2024-2025/140228",
+            "name": "Construction of bathing ghat in government pond (Burubanda) in village Galudih of Tilopada\u2026",
+            "house": "Lok Sabha",
+            "state": "Jharkhand",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 56.3
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP18253/2024-2025/150417",
+            "name": "CONSTRUCTION OF BATHING GHAT AT INDRAPUR PHC UNDER G PLOTE GP",
+            "house": "Lok Sabha",
+            "state": "West Bengal",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 54.3
+        },
+        {
+          "similar_work": {
+            "id": "RS-SR-24200",
+            "name": "Construction of Bathing Ghat of Tiakata Tank",
+            "house": "Rajya Sabha",
+            "state": "Odisha",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 53.6
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP18074/2024-2025/140227",
+            "name": "Construction of bathing ghat in Laka pond of village Aruwan of Aruwan Panchayat under Kuchai block.",
+            "house": "Lok Sabha",
+            "state": "Jharkhand",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 52.4
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP053/2025-2026/179154",
+            "name": "construction of Bathing Ghat in Godai pokhra in Bediban madhuban",
+            "house": "Rajya Sabha",
+            "state": "Bihar",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 52.3
+        }
+      ]
+    },
+    {
+      "source_work": {
+        "id": "WS/MP106/2024-2025/145085",
+        "name": "Gram panchayat Balni, Vikas Khand Prabhatpattan, District Betul main gram Sawasan Pahadi namak\u2026",
+        "house": "Rajya Sabha",
+        "state": "Madhya Pradesh",
+        "category": "Normal/Others"
+      },
+      "top_5_similar": [
+        {
+          "similar_work": {
+            "id": "WS/MP106/2024-2025/145084",
+            "name": "Gram panchayat Morand, Vikas Khand Prabhatpattan, District Betul main Gothan namak sthan par\u2026",
+            "house": "Rajya Sabha",
+            "state": "Madhya Pradesh",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 100.0
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP106/2023-2024/26205",
+            "name": "Gram Hiwara, Gram Panchayat Kherwani, Vikaskhand Multai, District Betul (M.P.) main Teen Shed\u2026",
+            "house": "Rajya Sabha",
+            "state": "Madhya Pradesh",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 62.6
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP106/2023-2024/26208",
+            "name": "Gram v Gram Panchayat Datora, Vikaskhand Prabhat Pattan, Tehsil Multai, District Betul (M.P.)\u2026",
+            "house": "Rajya Sabha",
+            "state": "Madhya Pradesh",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 54.8
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP106/2023-2024/26207",
+            "name": "Gram v Gram Panchayat Sonora, Vikaskhand Multai, District Betul (M.P.) Mukhy marg ke pas Teen shed\u2026",
+            "house": "Rajya Sabha",
+            "state": "Madhya Pradesh",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 51.2
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP106/2025-2026/185984",
+            "name": "Gram Khapa, Gram Panchayat Banurkhapa, Vikaskhand Multai District Betul main Yogesh Buvade ke ghar\u2026",
+            "house": "Rajya Sabha",
+            "state": "Madhya Pradesh",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 47.7
+        }
+      ]
+    },
+    {
+      "source_work": {
+        "id": "WS/MP761/2024-2025/146630",
+        "name": "Construction of Boundary wall to Geetha Vidyalayam in Vani nagar",
+        "house": "Lok Sabha",
+        "state": "Telangana",
+        "category": "Normal/Others"
+      },
+      "top_5_similar": [
+        {
+          "similar_work": {
+            "id": "WS/MP18023/2024-2025/138483",
+            "name": "Construction of boundary wall at Ujjal Nagar Namghar , Hengrabari .",
+            "house": "Lok Sabha",
+            "state": "Assam",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 77.4
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP18144/2024-2025/148128",
+            "name": "Construction of boundary wall at Bisibahal U P School",
+            "house": "Lok Sabha",
+            "state": "Odisha",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 76.8
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP186/2023-2024/81780",
+            "name": "construction of boundary wall of wedding house.",
+            "house": "Rajya Sabha",
+            "state": "Uttar Pradesh",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 75.9
+        },
+        {
+          "similar_work": {
+            "id": "RS-SR-21873",
+            "name": "Construction of Boundary wall",
+            "house": "Rajya Sabha",
+            "state": "Odisha",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 75.3
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP196/2025-2026/227628",
+            "name": "Construction of Boundary wall.",
+            "house": "Rajya Sabha",
+            "state": "Uttar Pradesh",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 73.5
+        }
+      ]
+    },
+    {
+      "source_work": {
+        "id": "RS-SR-24278",
+        "name": "Construction of Community hall at Rallagudepally Villagae, Mominpet Mandal, Vikarabad Dist",
+        "house": "Rajya Sabha",
+        "state": "Andhra Pradesh",
+        "category": "Normal/Others"
+      },
+      "top_5_similar": [
+        {
+          "similar_work": {
+            "id": "RS-SR-24295",
+            "name": "Construction of Community Hall at Yellareddypally Village, Indalawai Mandal, Nizamabad Dist",
+            "house": "Rajya Sabha",
+            "state": "Andhra Pradesh",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 72.0
+        },
+        {
+          "similar_work": {
+            "id": "RS-SR-20193",
+            "name": "Construction of Community Hall at HousrVillage, pattikonda, Kurnool Dist",
+            "house": "Rajya Sabha",
+            "state": "Andhra Pradesh",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 69.2
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP18428/2025-2026/234791",
+            "name": "Construction of Community Hall at Khasapeta, Lakkavarapukota Mandal, Vijayanagaram District",
+            "house": "Rajya Sabha",
+            "state": "Andhra Pradesh",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 68.0
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP524/2024-2025/147047",
+            "name": "Construction of Community Hall in Ramasamudram (V&G.P)",
+            "house": "Lok Sabha",
+            "state": "Andhra Pradesh",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 65.6
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP524/2024-2025/157614",
+            "name": "Construction of Community hall in Neerugattuvaripalli (V), Chinthalavaripalli (G.P)",
+            "house": "Lok Sabha",
+            "state": "Andhra Pradesh",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 63.6
+        }
+      ]
+    },
+    {
+      "source_work": {
+        "id": "WS/MP494/2024-2025/137207",
+        "name": "CC WORK IN VILLAGE LAKHANAMAI FROM YADRAM BAGHEL TO SEVARAM BAGHEL HOUSE",
+        "house": "Lok Sabha",
+        "state": "Uttar Pradesh",
+        "category": "Normal/Others"
+      },
+      "top_5_similar": [
+        {
+          "similar_work": {
+            "id": "WS/MP494/2024-2025/137216",
+            "name": "CC WORK IN VILLAGE BADA GUDHA FROM GHANSHYAM TO PRADEEP BAGHEL HOUSE",
+            "house": "Lok Sabha",
+            "state": "Uttar Pradesh",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 83.9
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP494/2024-2025/137215",
+            "name": "CC WORK IN TEDI BAGIYA RADHA NAGAR COLONY JD FARM HOUSE TO DEVENDRA BAGHEL HOUSE",
+            "house": "Lok Sabha",
+            "state": "Uttar Pradesh",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 67.9
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP494/2024-2025/137210",
+            "name": "CC WORK IN BAGHEL COLONY FROM BHUP SINGH BAGHEL TO PANDIT JI HOUSE",
+            "house": "Lok Sabha",
+            "state": "Uttar Pradesh",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 67.7
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP494/2024-2025/137201",
+            "name": "CC WORK IN VILLAGE MUKHWAR FROM LEKHRAJ TO OMPRAKASH HOUSE",
+            "house": "Lok Sabha",
+            "state": "Uttar Pradesh",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 61.2
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP18347/2025-2026/187638",
+            "name": "CC work in village sucheta from bhagwan singh house to billu house",
+            "house": "Rajya Sabha",
+            "state": "Uttar Pradesh",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 57.4
+        }
+      ]
+    },
+    {
+      "source_work": {
+        "id": "WS/MP761/2025-2026/138988",
+        "name": "Construction of Youth Building near Gandhi statue",
+        "house": "Lok Sabha",
+        "state": "Telangana",
+        "category": "Normal/Others"
+      },
+      "top_5_similar": [
+        {
+          "similar_work": {
+            "id": "RS-SR-18724",
+            "name": "Installation of THREE High Mast Lights near Pochamma Temple Karepalle road and near Gandhi Statue\u2026",
+            "house": "Rajya Sabha",
+            "state": "Telangana",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 50.7
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP846/2024-2025/122801",
+            "name": "C/o Mahilasangam Building at Lothunur (v) Gollapalli (m)",
+            "house": "Rajya Sabha",
+            "state": "Telangana",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 43.5
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP171/2024-2025/147161",
+            "name": "Erection of LED High mast lights near Gandhi Chowk in Neradigonda (V),and (M)",
+            "house": "Rajya Sabha",
+            "state": "Telangana",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 40.2
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP18405/2025-2026/161659",
+            "name": "Installation of Solar HighMast Light near Gandhi Bhavan ,Ward-13 Moolakkada of Pathanapuram GP",
+            "house": "Rajya Sabha",
+            "state": "Kerala",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 38.7
+        },
+        {
+          "similar_work": {
+            "id": "RS-SR-14009",
+            "name": "Development of Swargodeo Chaulung Statue and Park at Tipam",
+            "house": "Rajya Sabha",
+            "state": "Assam",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 35.1
+        }
+      ]
+    },
+    {
+      "source_work": {
+        "id": "WS/MP18394/2024-2025/143009",
+        "name": "Providing Drainage from wart No.7 Nangudiyar main road Karunanidhi House to Arasamaram Bustop in\u2026",
+        "house": "Lok Sabha",
+        "state": "Tamil Nadu",
+        "category": "Normal/Others"
+      },
+      "top_5_similar": [
+        {
+          "similar_work": {
+            "id": "WS/MP18173/2024-2025/139197",
+            "name": "Providing Side Drainage in Ward No.9 at Arani Municipality",
+            "house": "Lok Sabha",
+            "state": "Tamil Nadu",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 66.9
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP165/2023-2024/96030",
+            "name": "Providing Drainage at Velar street ward no 11",
+            "house": "Rajya Sabha",
+            "state": "Tamil Nadu",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 62.1
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP18334/2024-2025/152225",
+            "name": "Providing drainage in Peddamadigapalli H/o in D.Racchapalli G.P of Veeraballi Mandal",
+            "house": "Rajya Sabha",
+            "state": "Andhra Pradesh",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 49.7
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP18265/2025-2026/155174",
+            "name": "Providing drainage and drinking water supply pipelines in ward No 18, East Street, Theradi Veethiy.",
+            "house": "Lok Sabha",
+            "state": "Tamil Nadu",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 48.5
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP162/2023-2024/68424",
+            "name": "Constructions of Drainage With Vertical Filter at Colony Main Road at Karuppan kuttai, Kovanur\u2026",
+            "house": "Rajya Sabha",
+            "state": "Tamil Nadu",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 42.1
+        }
+      ]
+    },
+    {
+      "source_work": {
+        "id": "RS-SR-23452",
+        "name": "Formation of Road from Seetharampuram to M. Raja Reddy Agricultural Land at Seetharampuram (V),\u2026",
+        "house": "Rajya Sabha",
+        "state": "Andhra Pradesh",
+        "category": "Normal/Others"
+      },
+      "top_5_similar": [
+        {
+          "similar_work": {
+            "id": "RS-SR-23451",
+            "name": "Formation of metal road from Kunta to Ramachandra Reddy agricultural land road at Seetharampuram\u2026",
+            "house": "Rajya Sabha",
+            "state": "Andhra Pradesh",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 82.6
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP18334/2025-2026/205206",
+            "name": "Providing Formation Road from Mittamidapalli R and B road To Lakshmidevi Fields in Utukuru GP,\u2026",
+            "house": "Rajya Sabha",
+            "state": "Andhra Pradesh",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 62.3
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP524/2024-2025/147049",
+            "name": "Formation of Road Srinivasapuram Road to Thummakuntla Bandla at Elavanellore (G.P)",
+            "house": "Lok Sabha",
+            "state": "Andhra Pradesh",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 54.0
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP18334/2025-2026/205182",
+            "name": "Formation of road from Dandlopalli to Dhonalamma temple via agriculture fields in Dondlopalli GP of\u2026",
+            "house": "Rajya Sabha",
+            "state": "Andhra Pradesh",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 47.4
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP233/2024-2025/133818",
+            "name": "Prevention of Agricultural Land Erosion and Flood at Tizit River",
+            "house": "Rajya Sabha",
+            "state": "Nagaland",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 42.8
+        }
+      ]
+    },
+    {
+      "source_work": {
+        "id": "WS/MP052/2025-2026/237492",
+        "name": "Construction of P.C.C. Road work",
+        "house": "Rajya Sabha",
+        "state": "Bihar",
+        "category": "Normal/Others"
+      },
+      "top_5_similar": [
+        {
+          "similar_work": {
+            "id": "WS/MP052/2025-2026/238705",
+            "name": "Construction of P.C.C. Road work",
+            "house": "Rajya Sabha",
+            "state": "Bihar",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 100.0
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP052/2025-2026/238696",
+            "name": "Construction of P.C.C. Road work",
+            "house": "Rajya Sabha",
+            "state": "Bihar",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 100.0
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP052/2025-2026/238697",
+            "name": "Construction of P.C.C. Road Work",
+            "house": "Rajya Sabha",
+            "state": "Bihar",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 100.0
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP052/2025-2026/238695",
+            "name": "Construction of P.C.C. Road work",
+            "house": "Rajya Sabha",
+            "state": "Bihar",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 100.0
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP052/2025-2026/237496",
+            "name": "Construction of P.C.C. Road work",
+            "house": "Rajya Sabha",
+            "state": "Bihar",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 100.0
+        }
+      ]
+    },
+    {
+      "source_work": {
+        "id": "WS/MP838/2025-2026/169663",
+        "name": "PROVIDING SMART CLASS UNIT (1 Nos) to GOVT. HIGHER PRIMARY SCHOOL MUNDATHODY PERLA (29240207711)",
+        "house": "Rajya Sabha",
+        "state": "Karnataka",
+        "category": "Normal/Others"
+      },
+      "top_5_similar": [
+        {
+          "similar_work": {
+            "id": "WS/MP838/2025-2026/169514",
+            "name": "PROVIDING SMART CLASS UNIT (1 Nos) to GOVT. HIGHER PRIMARY SCHOOL KALLERI (29240202603)",
+            "house": "Rajya Sabha",
+            "state": "Karnataka",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 100.0
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP838/2025-2026/169500",
+            "name": "PROVIDING SMART CLASS UNIT (1 Nos) to GOVT. HIGHER PRIMARY SCHOOL DEVANAARI (29240201802)",
+            "house": "Rajya Sabha",
+            "state": "Karnataka",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 100.0
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP838/2025-2026/169497",
+            "name": "PROVIDING SMART CLASS UNIT (1 Nos) to GOVT. HIGHER PRIMARY SCHOOL BANNENGALA (29240201701)",
+            "house": "Rajya Sabha",
+            "state": "Karnataka",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 100.0
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP838/2025-2026/169487",
+            "name": "PROVIDING SMART CLASS UNIT (1 Nos) to GOVT. HIGHER PRIMARY SCHOOL KUNTALAPALKE - B (29240200702)",
+            "house": "Rajya Sabha",
+            "state": "Karnataka",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 100.0
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP838/2025-2026/169496",
+            "name": "PROVIDING SMART CLASS UNIT (1 Nos) to GOVT. HIGHER PRIMARY SCHOOL PERINJE (29240201602)",
+            "house": "Rajya Sabha",
+            "state": "Karnataka",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 100.0
+        }
+      ]
+    },
+    {
+      "source_work": {
+        "id": "WS/MP423/2024-2025/138442",
+        "name": "Construction of C.C road from H/O Paritosh Safui to H/O Sarama Safui at Prasadpur.(52 mtr)",
+        "house": "Lok Sabha",
+        "state": "West Bengal",
+        "category": "Normal/Others"
+      },
+      "top_5_similar": [
+        {
+          "similar_work": {
+            "id": "WS/MP423/2024-2025/138275",
+            "name": "Construction of C C Road from Aima Masjid to H/O Sajamal at Aima. (36 mtr)",
+            "house": "Lok Sabha",
+            "state": "West Bengal",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 53.8
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP423/2024-2025/138447",
+            "name": "Construction of C.C road from H/O Altaf Sepai to H/O Sabina Bibi at Gandhabaduli. (121 mtr)",
+            "house": "Lok Sabha",
+            "state": "West Bengal",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 48.2
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP423/2024-2025/138457",
+            "name": "Construction of C.C road from H/O Javed Mallick to H/O Iliyash Molla. (53 mtr)",
+            "house": "Lok Sabha",
+            "state": "West Bengal",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 47.0
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP218/2026-2027/262300",
+            "name": "CONSTRUCTION OF ROAD FROM PUKKURIA TO PAIRABHARI",
+            "house": "Rajya Sabha",
+            "state": "West Bengal",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 46.9
+        },
+        {
+          "similar_work": {
+            "id": "RS-SR-18133",
+            "name": "Construction of road from Dhadki-Koraapara and Dhadki-Porapara.",
+            "house": "Rajya Sabha",
+            "state": "West Bengal",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 46.8
+        }
+      ]
+    },
+    {
+      "source_work": {
+        "id": "WS/MP18161/2024-2025/138107",
+        "name": "Cc interlocking eat kharanja Nirman karya main road se balveer ke nohare ki or theI work agency\u2026",
+        "house": "Lok Sabha",
+        "state": "Rajasthan",
+        "category": "Normal/Others"
+      },
+      "top_5_similar": [
+        {
+          "similar_work": {
+            "id": "WS/MP18161/2024-2025/138109",
+            "name": "CC interlocking eat kharanja Nirman karya RatanSingh ke Ghar se Mangal ke Ghar ki or Avam vibhinn\u2026",
+            "house": "Lok Sabha",
+            "state": "Rajasthan",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 79.3
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP18161/2024-2025/138106",
+            "name": "Interlocking eat kharanja Nirman karya mukhya sadak se Ishwar ke Ghar ki or fulwara work agency GP\u2026",
+            "house": "Lok Sabha",
+            "state": "Rajasthan",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 73.8
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP18161/2024-2025/138110",
+            "name": "CC interlocking eat kharanja Nirman karya mein sadak se Sundar master wali gali Avam vibhinn\u2026",
+            "house": "Lok Sabha",
+            "state": "Rajasthan",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 70.9
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP18161/2024-2025/138111",
+            "name": "Rajkiya uchch madhyamik vidyalaya parisar mein interlocking Eat kharanja Nirman karya Halena work\u2026",
+            "house": "Lok Sabha",
+            "state": "Rajasthan",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 65.0
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP18161/2024-2025/138121",
+            "name": "Interlocking Eat kharanja May nali lalaram ke Ghar se men sadak ki or gram dantlothi work agency GP\u2026",
+            "house": "Lok Sabha",
+            "state": "Rajasthan",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 63.1
+        }
+      ]
+    },
+    {
+      "source_work": {
+        "id": "WS/MP18159/2024-2025/145799",
+        "name": "Construction work of library room with veranda in Mahatma Gandhi Higher Secondary School (English\u2026",
+        "house": "Lok Sabha",
+        "state": "Rajasthan",
+        "category": "Normal/Others"
+      },
+      "top_5_similar": [
+        {
+          "similar_work": {
+            "id": "WS/MP18159/2024-2025/145800",
+            "name": "R.U.P.V. Construction work of library room with veranda in Mangleshpur. G.P. Senthli P.S. Ramgarh\u2026",
+            "house": "Lok Sabha",
+            "state": "Rajasthan",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 81.7
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP18159/2024-2025/154581",
+            "name": "Construction work of library room with veranda in Government Higher Secondary School, Nagli Megha,\u2026",
+            "house": "Lok Sabha",
+            "state": "Rajasthan",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 77.8
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP18159/2024-2025/145791",
+            "name": "Construction work of library room with verandah in Mahatma Gandhi Vidyalaya, Bagar Meo. G.P. Bagar\u2026",
+            "house": "Lok Sabha",
+            "state": "Rajasthan",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 71.7
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP18159/2024-2025/145795",
+            "name": "Construction work of library room with veranda in R.U.M.V. Deenar. G.P. Deenar P.S. Lachhmangarh\u2026",
+            "house": "Lok Sabha",
+            "state": "Rajasthan",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 70.4
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP18159/2024-2025/145794",
+            "name": "Construction work library room with of veranda in front of Panchayat building in Gram Panchayat\u2026",
+            "house": "Lok Sabha",
+            "state": "Rajasthan",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 64.2
+        }
+      ]
+    },
+    {
+      "source_work": {
+        "id": "WS/MP18188/2025-2026/159812",
+        "name": "Laying of CC Road from Hanuman Temple to Bichala Bhimappa (H) at Mukundapur Village of Yalal Mandal",
+        "house": "Lok Sabha",
+        "state": "Telangana",
+        "category": "Normal/Others"
+      },
+      "top_5_similar": [
+        {
+          "similar_work": {
+            "id": "WS/MP18188/2025-2026/159817",
+            "name": "Laying of CC Road from J.Laxmamma (H) to Kammari Veeraiah (H) at Kokat Village of Yalal Mandal",
+            "house": "Lok Sabha",
+            "state": "Telangana",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 97.2
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP18188/2025-2026/159818",
+            "name": "Laying of CC Road from Gaddameedi Narsimlu (H) to Andhra Bank at Juntupally Village of Yalal Mandal",
+            "house": "Lok Sabha",
+            "state": "Telangana",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 91.0
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP18188/2025-2026/159816",
+            "name": "Laying of CC Road from Lingamanthula Bhudyappa (H) to Chinnelli Bandyappa (H) at Devanoor (V) of\u2026",
+            "house": "Lok Sabha",
+            "state": "Telangana",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 81.8
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP18188/2025-2026/159819",
+            "name": "Laying of CC Road from Shiva Kumar (H) to Doma Verappa (H) at Rasnam (V) of Yalal Mandal",
+            "house": "Lok Sabha",
+            "state": "Telangana",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 72.4
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP18188/2025-2026/159814",
+            "name": "Laying of CC Road from Primary School to Edigi Kashaiah (H) at Gorepally (V) of Yalal Mandal",
+            "house": "Lok Sabha",
+            "state": "Telangana",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 71.1
+        }
+      ]
+    },
+    {
+      "source_work": {
+        "id": "WS/MP163/2024-2025/136117",
+        "name": "Providing Bituminous Macadam road at Main Road West side in Tirumalai Garden, Mathur Village,\u2026",
+        "house": "Rajya Sabha",
+        "state": "Tamil Nadu",
+        "category": "Normal/Others"
+      },
+      "top_5_similar": [
+        {
+          "similar_work": {
+            "id": "WS/MP163/2024-2025/136113",
+            "name": "Providing Bituminous Macadam road at Main Road East side in Tirumalai Garden, Mathur Village,\u2026",
+            "house": "Rajya Sabha",
+            "state": "Tamil Nadu",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 100.0
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP163/2024-2025/136114",
+            "name": "Providing Bituminous Macadam road at 1st Cross street Tirumalai Garden, Mathur Village, Madurai\u2026",
+            "house": "Rajya Sabha",
+            "state": "Tamil Nadu",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 89.7
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP163/2024-2025/136115",
+            "name": "Providing Bituminous Macadam road at 2nd Cross street Tirumalai Garden, Mathur Village, Madurai\u2026",
+            "house": "Rajya Sabha",
+            "state": "Tamil Nadu",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 89.3
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP163/2024-2025/136116",
+            "name": "Providing Bituminous Macadam road at 3rd Cross street Tirumalai Garden, Mathur Village, Madurai\u2026",
+            "house": "Rajya Sabha",
+            "state": "Tamil Nadu",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 88.7
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP163/2024-2025/136097",
+            "name": "Providing Bituminous Macadam Road at 1st street West side in Meenakshi Garden in Mathur Village,\u2026",
+            "house": "Rajya Sabha",
+            "state": "Tamil Nadu",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 74.4
+        }
+      ]
+    },
+    {
+      "source_work": {
+        "id": "RS-SR-23486",
+        "name": "INSTALLATION OF PAWER BLOCKS AT BHOJPURA PRIMARY SCHOOL",
+        "house": "Rajya Sabha",
+        "state": "Gujarat",
+        "category": "Normal/Others"
+      },
+      "top_5_similar": [
+        {
+          "similar_work": {
+            "id": "RS-SR-23488",
+            "name": "INSTALLATION OF PAWER BLOCKS AT PRIMARY SCHOOL CHANDAPURI",
+            "house": "Rajya Sabha",
+            "state": "Gujarat",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 99.0
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP18288/2025-2026/255752",
+            "name": "Installation of pawer blocks towards shamana primary helth centre shamana",
+            "house": "Rajya Sabha",
+            "state": "Gujarat",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 86.6
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP18288/2025-2026/255763",
+            "name": "installation of pawer blocks at machhar faliya udava",
+            "house": "Rajya Sabha",
+            "state": "Gujarat",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 83.5
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP18288/2025-2026/255668",
+            "name": "Installation of pawer blocks at Nani kharsoli primary school nani kharsoli kadana",
+            "house": "Rajya Sabha",
+            "state": "Gujarat",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 81.2
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP18288/2025-2026/255667",
+            "name": "Installation of pawer blocks at relva primary school relva kadana",
+            "house": "Rajya Sabha",
+            "state": "Gujarat",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 78.4
+        }
+      ]
+    },
+    {
+      "source_work": {
+        "id": "WS/MP18056/2024-2025/141633",
+        "name": "C C Road work at Village Jangvad",
+        "house": "Lok Sabha",
+        "state": "Gujarat",
+        "category": "Normal/Others"
+      },
+      "top_5_similar": [
+        {
+          "similar_work": {
+            "id": "WS/MP052/2025-2026/256430",
+            "name": "Construction of P.C.C. Road Work in Village Jabdaul,",
+            "house": "Rajya Sabha",
+            "state": "Bihar",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 89.2
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP052/2025-2026/256429",
+            "name": "Construction of P.C.C. Road Work in Village Sitabdiyar, ward no.-5",
+            "house": "Rajya Sabha",
+            "state": "Bihar",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 81.4
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP052/2025-2026/256434",
+            "name": "Construction of P.C.C. Road work in Village Barganv, ward No.- 09",
+            "house": "Rajya Sabha",
+            "state": "Bihar",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 66.9
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP052/2025-2026/256428",
+            "name": "Construction of P.C.C. Road Work in Village Dhaminaha, ward no.-05",
+            "house": "Rajya Sabha",
+            "state": "Bihar",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 65.4
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP052/2025-2026/256424",
+            "name": "Construction of P.C.C. Road Work in Village Khiria, ward No.- 03",
+            "house": "Rajya Sabha",
+            "state": "Bihar",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 64.5
+        }
+      ]
+    },
+    {
+      "source_work": {
+        "id": "WS/MP423/2024-2025/138281",
+        "name": "Construction of CC Road from H/O Ranajit Naskar to H/O Punna Ch. Mondal. (70 mtr)",
+        "house": "Lok Sabha",
+        "state": "West Bengal",
+        "category": "Normal/Others"
+      },
+      "top_5_similar": [
+        {
+          "similar_work": {
+            "id": "WS/MP423/2024-2025/138054",
+            "name": "Construction of CC Road from H/O Bapan Naskar to H/O Souvik Naskar. (100 mtr)",
+            "house": "Lok Sabha",
+            "state": "West Bengal",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 71.4
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP423/2024-2025/137561",
+            "name": "Construction of CC Road with Pilling from Goragacha Giyas's Shop to Janaalom's Shop. (70 mtr.)",
+            "house": "Lok Sabha",
+            "state": "West Bengal",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 70.7
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP423/2024-2025/138580",
+            "name": "Construction of CC Road From H/O Akash Nandi to H/O Uttam Halder. (70 mtr)",
+            "house": "Lok Sabha",
+            "state": "West Bengal",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 68.0
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP423/2024-2025/138839",
+            "name": "Construction of CC Road from H/O Bapi Mondal to H/O Nisikanta Mondal at Ghanshyambati- III (30 mtr)",
+            "house": "Lok Sabha",
+            "state": "West Bengal",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 59.4
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP423/2024-2025/137564",
+            "name": "Construction of CC Road from H/O Monoronjon Mondal to Gogon Koyila More at Paschim Khordonalha\u2026",
+            "house": "Lok Sabha",
+            "state": "West Bengal",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 58.5
+        }
+      ]
+    },
+    {
+      "source_work": {
+        "id": "RS-SR-17664",
+        "name": "Ambulance for Village Panchayat Reis-Magos, Reis-Magos, Bardez, North Goa.",
+        "house": "Rajya Sabha",
+        "state": "Goa",
+        "category": "Normal/Others"
+      },
+      "top_5_similar": [
+        {
+          "similar_work": {
+            "id": "RS-SR-18556",
+            "name": "Garbage Collection Vehicle for Village Panchayat of Cumbarjua, Cumbarjua, Tiswadi, North Goa.",
+            "house": "Rajya Sabha",
+            "state": "Goa",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 76.9
+        },
+        {
+          "similar_work": {
+            "id": "RS-SR-17663",
+            "name": "Garbage Collection Vehicle for Village Panchayat Parcem, Parcem, Pernem, North Goa.",
+            "house": "Rajya Sabha",
+            "state": "Goa",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 73.6
+        },
+        {
+          "similar_work": {
+            "id": "WS/MP885/2025-2026/181713",
+            "name": "School Bus for Goa College of Physiotherapy, Naturopathy and Yogic Science, Sankhali, North Goa,\u2026",
+            "house": "Rajya Sabha",
+            "state": "Goa",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 72.0
+        },
+        {
+          "similar_work": {
+            "id": "RS-SR-22751",
+            "name": "School Bus for Shri Hanuman Vidyalaya, Velus, Valpoi, Sattari, North Goa",
+            "house": "Rajya Sabha",
+            "state": "Goa",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 69.1
+        },
+        {
+          "similar_work": {
+            "id": "RS-SR-18666",
+            "name": "Purchase of School Bus for Smt. Sunandabai Bandodkar High School, Carambolim, Tiswadi, North Goa\u2026",
+            "house": "Rajya Sabha",
+            "state": "Goa",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 68.5
+        }
+      ]
+    },
+    {
+      "source_work": {
+        "id": "WS/MP891/2025-2026/242246",
+        "name": "Bus stand (bus shed)",
+        "house": "Rajya Sabha",
+        "state": "Gujarat",
+        "category": "Normal/Others"
+      },
+      "top_5_similar": [
+        {
+          "similar_work": {
+            "id": "RS-SR-23309",
+            "name": "bus stand or bus shed",
+            "house": "Rajya Sabha",
+            "state": "Gujarat",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 100.0
+        },
+        {
+          "similar_work": {
+            "id": "RS-SR-20997",
+            "name": "Bus stand/bus shed",
+            "house": "Rajya Sabha",
+            "state": "Gujarat",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 100.0
+        },
+        {
+          "similar_work": {
+            "id": "RS-SR-20998",
+            "name": "Bus stand/bus shed",
+            "house": "Rajya Sabha",
+            "state": "Gujarat",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 100.0
+        },
+        {
+          "similar_work": {
+            "id": "RS-SR-20999",
+            "name": "Bus stand/bus shed",
+            "house": "Rajya Sabha",
+            "state": "Gujarat",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 100.0
+        },
+        {
+          "similar_work": {
+            "id": "RS-SR-21000",
+            "name": "Bus stand/bus shed",
+            "house": "Rajya Sabha",
+            "state": "Gujarat",
+            "category": "Normal/Others"
+          },
+          "similarity_pct": 100.0
+        }
+      ]
+    }
+  ],
+  "generated_at": "2026-09-12T13:17:21.837193Z"
+}

@@ -1,0 +1,82 @@
+{
+  "computed_at": "2026-09-12T12:13:53.138154",
+  "evaluation_date": "2026-09-01",
+  "risk_thresholds": {
+    "high": 70,
+    "medium": 40
+  },
+  "outlier_bounds": {
+    "Lok Sabha": {
+      "recommended": {
+        "q1": 1.72,
+        "q3": 5.29,
+        "iqr": 3.57,
+        "upper_bound": 10.64,
+        "n": 13657
+      },
+      "sanctioned": {
+        "q1": 1.91,
+        "q3": 6.0,
+        "iqr": 4.09,
+        "upper_bound": 12.13,
+        "n": 6990
+      }
+    },
+    "Rajya Sabha": {
+      "recommended": {
+        "q1": 2.43,
+        "q3": 10.0,
+        "iqr": 7.57,
+        "upper_bound": 21.36,
+        "n": 24608
+      },
+      "sanctioned": {
+        "q1": 2.43,
+        "q3": 9.98,
+        "iqr": 7.55,
+        "upper_bound": 21.3,
+        "n": 18972
+      }
+    }
+  },
+  "anomaly_config": {
+    "Lok Sabha": {
+      "n_estimators": 200,
+      "contamination": 0.05,
+      "random_state": 42,
+      "feature_names": [
+        "log_recommended_amount",
+        "log_sanctioned_amount",
+        "log_expenditure",
+        "deviation_pct",
+        "expenditure_ratio",
+        "elapsed_days",
+        "sanctioned_missing",
+        "expenditure_missing",
+        "deviation_missing",
+        "ratio_missing"
+      ],
+      "n_records": 13657,
+      "n_flagged": 683
+    },
+    "Rajya Sabha": {
+      "n_estimators": 200,
+      "contamination": 0.05,
+      "random_state": 42,
+      "feature_names": [
+        "log_recommended_amount",
+        "log_sanctioned_amount",
+        "log_expenditure",
+        "deviation_pct",
+        "expenditure_ratio",
+        "elapsed_days",
+        "sanctioned_missing",
+        "expenditure_missing",
+        "deviation_missing",
+        "ratio_missing"
+      ],
+      "n_records": 24608,
+      "n_flagged": 1231
+    }
+  }
+}

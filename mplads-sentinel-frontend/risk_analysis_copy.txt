@@ -1,0 +1,584 @@
+import { useEffect, useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
+import { api } from '../services/api'
+import { useHouse } from '../context/useHouse'
+
+function formatAmount(amount) {
+  if (amount === null || amount === undefined) return '—'
+  return `₹${Number(amount).toLocaleString('en-IN', { maximumFractionDigits: 2 })} L`
+}
+
+function levelColors(level) {
+  if (level === 'High') return { badge: 'bg-red-100 text-red-700', bar: 'bg-red-500', border: 'border-red-500', text: 'text-red-600' }
+  if (level === 'Medium') return { badge: 'bg-yellow-100 text-yellow-700', bar: 'bg-yellow-500', border: 'border-yellow-500', text: 'text-yellow-600' }
+  return { badge: 'bg-green-100 text-green-700', bar: 'bg-green-500', border: 'border-green-500', text: 'text-green-600' }
+}
+
+// Real (Phase 4) indicators look like {type, message, observed_value, threshold, points}.
+// Demo/seed indicators look like {name, level, score, description}. Both shapes are
+// possible depending on whether the connected database is production (demo) or
+// staging (real) — this renders either honestly, using only fields actually present.
+const INDICATOR_LABELS = {
+  recommendation_sanction_deviation: 'Recommendation vs Sanction Deviation',
+  expenditure_sanction_ratio: 'Expenditure vs Sanctioned Amount',
+  long_pending_recommendation: 'Long-Pending Recommendation',
+  statistical_amount_outlier: 'Statistical Amount Outlier',
+  workflow_inconsistency: 'Workflow Inconsistency',
+  ml_anomaly_evidence: 'AI-Assisted Anomaly Signal',
+}
+
+const INDICATOR_MAX_POINTS = {
+  recommendation_sanction_deviation: 30,
+  expenditure_sanction_ratio: 30,
+  long_pending_recommendation: 20,
+  statistical_amount_outlier: 15,
+  workflow_inconsistency: 10,
+  ml_anomaly_evidence: 0,
+}
+
+function getIndicatorMeta(indicator) {
+  // ML pipeline returns risk indicators as plain strings.
+  if (typeof indicator === 'string') {
+    return {
+      key: indicator,
+      title: indicator,
+      body: 'This indicator was identified by the ML risk analysis.',
+      level: null,
+      hasBar: false,
+      barPct: 0,
+      barLabel: 'ML indicator',
+    }
+  }
+
+  // Legacy/demo indicator format.
+  if (indicator?.name !== undefined) {
+    return {
+      key: indicator.name,
+      title: indicator.name,
+      body:
+        indicator.description ||
+        `This indicator scored ${indicator.score}/100, classified as ${indicator.level} risk.`,
+      level: indicator.level,
+      hasBar: true,
+      barPct: indicator.score ?? 0,
+      barLabel: `${indicator.score}/100`,
+    }
+  }
+
+  // Backend structured indicator format.
+  const maxPoints = INDICATOR_MAX_POINTS[indicator?.type] ?? null
+  const points = indicator?.points ?? 0
+  const level =
+    indicator?.type === 'ml_anomaly_evidence'
+      ? null
+      : points >= 20
+        ? 'High'
+        : points >= 10
+          ? 'Medium'
+          : 'Low'
+
+  return {
+    key: indicator?.type || 'unknown',
+    title: INDICATOR_LABELS[indicator?.type] || 'Risk Indicator',
+    body: indicator?.message || 'No further detail available.',
+    level,
+    hasBar: !!maxPoints,
+    barPct: maxPoints ? Math.round((points / maxPoints) * 100) : 0,
+    barLabel: maxPoints ? `${points}/${maxPoints} pts` : 'Decision support',
+  }
+}
+function RiskAnalysis() {
+  const navigate = useNavigate()
+  const { workId } = useParams()
+  const { selectedHouse } = useHouse()
+
+  const [data, setData] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+  const [reloadIndex, setReloadIndex] = useState(0)
+
+  useEffect(() => {
+    let cancelled = false
+
+    async function fetchRiskAnalysis() {
+      setLoading(true)
+      setError(null)
+      try {
+        const res = await api.getRiskAnalysis(workId)
+        if (!cancelled) setData(res)
+      } catch (err) {
+        if (!cancelled) setError(err.message || 'Failed to load risk analysis')
+      } finally {
+        if (!cancelled) setLoading(false)
+      }
+    }
+
+    fetchRiskAnalysis()
+    return () => {
+      cancelled = true
+    }
+  }, [workId, reloadIndex])
+
+  function retryFetchRiskAnalysis() {
+    setReloadIndex((i) => i + 1)
+  }
+
+  if (loading) {
+    return (
+      <div className="flex h-[60vh] items-center justify-center">
+        <div className="flex flex-col items-center gap-3">
+          <div className="h-10 w-10 animate-spin rounded-full border-4 border-slate-200 border-t-blue-600" />
+          <p className="text-sm font-medium text-slate-500">Loading risk analysis…</p>
+        </div>
+      </div>
+    )
+  }
+
+  if (error || !data) {
+    return (
+      <div className="flex h-[60vh] items-center justify-center">
+        <div className="max-w-sm rounded-2xl border border-red-200 bg-red-50 p-6 text-center">
+          <p className="text-sm font-semibold text-red-700">Couldn't load risk analysis</p>
+          <p className="mt-1 text-xs text-red-600">{error || 'Risk analysis not found.'}</p>
+          <div className="mt-4 flex justify-center gap-3">
+            <button
+              onClick={retryFetchRiskAnalysis}
+              className="rounded-lg bg-red-600 px-4 py-2 text-xs font-bold text-white hover:bg-red-700"
+            >
+              Retry
+            </button>
+            <button
+              onClick={() => navigate('/works')}
+              className="rounded-lg border border-slate-300 px-4 py-2 text-xs font-bold text-slate-700 hover:bg-slate-100"
+            >
+              Back to Works
+            </button>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  const colors = levelColors(data.risk_level)
+  const indicators = data.indicators || []
+  const similarWorks = data.similar_works || []
+  const financial = data.financial || {}
+
+  return (
+    <div>
+      {/* Header */}
+      <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-5 mb-8">
+        <div>
+          <button
+            onClick={() => navigate(`/works/${encodeURIComponent(data.work_id)}`)}
+            className="text-sm text-slate-400 hover:text-blue-600 transition mb-3"
+          >
+            ← Back to Work Details
+          </button>
+
+          <p className="text-sm font-medium text-blue-600 uppercase tracking-wide">
+            AI-assisted analysis
+          </p>
+
+          <h1 className="text-3xl font-bold text-slate-900 mt-1">
+            Risk Analysis
+          </h1>
+
+          <p className="text-slate-500 mt-2">
+            {data.work_name} • {data.work_id} • {data.constituency}, {data.state}
+            {data.house ? ` • ${data.house}` : ''}
+          </p>
+
+          {selectedHouse !== 'all' && data.house && data.house !== selectedHouse && (
+            <p className="mt-2 text-xs font-medium text-amber-600">
+              Viewing a {data.house} work — current monitoring context is {selectedHouse}.
+            </p>
+          )}
+        </div>
+
+        <button
+          onClick={() => navigate('/works')}
+          className="px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-sm font-medium text-slate-700 hover:bg-slate-50 transition"
+        >
+          Return to Works
+        </button>
+      </div>
+
+      {/* Risk Hero */}
+      <div className="bg-slate-950 rounded-3xl p-7 lg:p-8 text-white mb-6">
+        <div className="flex flex-col lg:flex-row lg:items-center gap-8">
+          {/* Score */}
+          <div className="relative w-40 h-40 shrink-0 mx-auto lg:mx-0">
+            <div className="absolute inset-0 rounded-full border-[12px] border-white/10" />
+
+            <div
+              className={`absolute inset-0 rounded-full border-[12px] ${colors.border}`}
+              style={{
+                clipPath: `polygon(0 0, 100% 0, 100% ${data.risk_score}%, 0 ${data.risk_score}%)`,
+              }}
+            />
+
+            <div className="absolute inset-0 flex flex-col items-center justify-center">
+              <span className="text-4xl font-bold">{data.risk_score}</span>
+              <span className="text-xs text-slate-400 mt-1">out of 100</span>
+            </div>
+          </div>
+
+          {/* Explanation */}
+          <div className="flex-1">
+            <div className="flex flex-wrap items-center gap-3">
+              <span className={`px-3 py-1.5 rounded-full text-xs font-semibold border border-white/10 ${colors.badge}`}>
+                {data.risk_level?.toUpperCase()} RISK INDICATOR
+              </span>
+
+              <span className="px-3 py-1.5 rounded-full bg-white/10 text-slate-300 text-xs">
+                {data.risk_status}
+              </span>
+
+              {data.is_anomaly && (
+                <span className="px-3 py-1.5 rounded-full bg-purple-500/15 text-purple-300 text-xs font-semibold border border-purple-500/20">
+                  Potential Anomaly
+                </span>
+              )}
+            </div>
+
+            <h2 className="text-2xl font-semibold mt-4">
+              Multiple signals require analyst attention
+            </h2>
+
+            <p className="text-slate-400 text-sm leading-6 mt-3 max-w-3xl">
+              The monitoring system has identified several characteristics
+              that differ from expected patterns. These signals are combined
+              into an overall risk indicator to help prioritize human review.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Why Flagged */}
+      <div className="mb-6">
+        <div className="mb-5">
+          <h2 className="text-xl font-semibold text-slate-900">
+            Why was this work flagged?
+          </h2>
+
+          <p className="text-sm text-slate-500 mt-1">
+            The following indicators contributed to the overall risk score.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+          {indicators.map((indicator) => {
+            const meta = getIndicatorMeta(indicator)
+            const ic = levelColors(meta.level)
+            return (
+              <div
+                key={meta.key}
+                className="bg-white border border-slate-200 rounded-2xl p-6 hover:shadow-md transition"
+              >
+                <div className="flex items-start justify-between">
+                  <div className="w-11 h-11 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center font-semibold">
+                    ⚠
+                  </div>
+
+                  {meta.level && (
+                    <span className={`px-2.5 py-1 rounded-full text-[11px] font-semibold ${ic.badge}`}>
+                      {meta.level}
+                    </span>
+                  )}
+                </div>
+
+                <h3 className="font-semibold text-slate-900 mt-5">
+                  {meta.title}
+                </h3>
+
+                <p className="text-sm text-slate-500 leading-6 mt-2">
+                  {meta.body}
+                </p>
+
+                {meta.hasBar && (
+                  <div className="mt-5">
+                    <div className="flex justify-between text-xs mb-2">
+                      <span className="text-slate-400">Signal strength</span>
+                      <span className="font-semibold text-slate-700">
+                        {meta.barLabel}
+                      </span>
+                    </div>
+
+                    <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
+                      <div
+                        className={`h-full rounded-full ${ic.bar}`}
+                        style={{ width: `${meta.barPct}%` }}
+                      />
+                    </div>
+                  </div>
+                )}
+              </div>
+            )
+          })}
+
+          {indicators.length === 0 && (
+            <div className="lg:col-span-3 bg-white border border-slate-200 rounded-2xl p-6 text-center text-sm text-slate-500">
+              No specific risk indicators were reported for this work.
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Evidence + AI Assessment */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+        {/* Evidence */}
+        <div className="lg:col-span-2 bg-white border border-slate-200 rounded-2xl p-6">
+          <h2 className="text-lg font-semibold text-slate-900">
+            Signal Evidence
+          </h2>
+
+          <p className="text-sm text-slate-500 mt-1">
+            Indicators are derived from available project attributes and
+            reported monitoring information.
+          </p>
+
+          <div className="mt-6 space-y-4">
+            <div className="border border-slate-200 rounded-xl p-4">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm font-semibold text-slate-900">
+                    Financial pattern
+                  </p>
+                  <p className="text-xs text-slate-500 mt-1">
+                    Recommended amount vs sanctioned amount
+                  </p>
+                </div>
+
+                {financial.cost_deviation_pct !== undefined && (
+                  <span className="text-sm font-bold text-slate-700">
+                    {financial.cost_deviation_pct > 0 ? '+' : ''}
+                    {financial.cost_deviation_pct}%
+                  </span>
+                )}
+              </div>
+
+              <div className="grid grid-cols-3 gap-4 mt-4">
+                <div className="bg-slate-50 rounded-lg p-3">
+                  <p className="text-xs text-slate-400">Recommended</p>
+                  <p className="font-semibold text-slate-900 mt-1">
+                    {formatAmount(financial.recommended_amount)}
+                  </p>
+                </div>
+
+                <div className="bg-slate-50 rounded-lg p-3">
+                  <p className="text-xs text-slate-400">Sanctioned</p>
+                  <p className="font-semibold text-slate-900 mt-1">
+                    {formatAmount(financial.sanctioned_amount)}
+                  </p>
+                </div>
+
+                <div className="bg-slate-50 rounded-lg p-3">
+                  <p className="text-xs text-slate-400">Expenditure</p>
+                  <p className="font-semibold text-slate-900 mt-1">
+                    {formatAmount(financial.expenditure)}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="border border-slate-200 rounded-xl p-4">
+              <div>
+                <p className="text-sm font-semibold text-slate-900">
+                  Progress pattern
+                </p>
+                <p className="text-xs text-slate-500 mt-1">
+                  Reported completion compared with project timeline
+                </p>
+              </div>
+
+              {data.progress === null || data.progress === undefined ? (
+                <p className="mt-4 text-xs text-slate-500">
+                  Progress not reported in source data.
+                </p>
+              ) : (
+                <div className="mt-4">
+                  <div className="flex justify-between text-xs text-slate-500 mb-2">
+                    <span>Reported progress</span>
+                    <span>{data.progress}%</span>
+                  </div>
+
+                  <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
+                    <div
+                      className="h-full bg-blue-600 rounded-full"
+                      style={{ width: `${data.progress}%` }}
+                    />
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <div className="border border-slate-200 rounded-xl p-4">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm font-semibold text-slate-900">
+                    Potential Anomaly
+                  </p>
+                  <p className="text-xs text-slate-500 mt-1">
+                    Statistical deviation from typical work patterns
+                  </p>
+                </div>
+
+                <span className={`text-sm font-bold ${data.is_anomaly ? 'text-purple-600' : 'text-slate-400'}`}>
+                  {data.is_anomaly ? 'Flagged' : 'Not flagged'}
+                </span>
+              </div>
+
+              {data.anomaly_score !== undefined && (
+                <p className="text-xs text-slate-500 mt-3">
+                  Anomaly score: {data.anomaly_score}
+                </p>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* AI Assessment */}
+        <div className="bg-slate-950 rounded-2xl p-6 text-white">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center">
+              ✦
+            </div>
+
+            <div>
+              <h2 className="font-semibold">AI Assessment</h2>
+              <p className="text-xs text-slate-500 mt-0.5">
+                Decision support
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-6">
+            <p className="text-sm text-slate-300 leading-6">
+              This work is classified as {data.risk_level?.toLowerCase()} risk and
+              currently marked "{data.risk_status}". Combined signals suggest
+              additional analyst attention, particularly around financial
+              patterns and reported progress.
+            </p>
+
+            <div className="mt-6 border-t border-white/10 pt-5">
+              <p className="text-xs uppercase tracking-wider text-slate-500">
+                Suggested next step
+              </p>
+
+              <p className="text-sm font-medium text-white mt-2">
+                Compare supporting records and similar works before making
+                any administrative decision.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Similar Works */}
+      <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden mb-6">
+        <div className="px-6 py-5 border-b border-slate-200">
+          <h2 className="text-lg font-semibold text-slate-900">
+            Potentially Similar Works
+          </h2>
+
+          <p className="text-sm text-slate-500 mt-1">
+            Works with comparable characteristics that may help analysts
+            perform contextual comparison.
+          </p>
+        </div>
+
+        <div className="divide-y divide-slate-100">
+          {similarWorks.map((similar) => (
+            <div
+              key={similar.id}
+              className="px-6 py-5 flex flex-col md:flex-row md:items-center gap-4"
+            >
+              <div className="flex-1">
+                <h3 className="font-semibold text-slate-900">
+                  {similar.name}
+                </h3>
+
+                <p className="text-xs text-slate-400 mt-1">
+                  {similar.id} • {similar.district || similar.state || 'Not available'}
+                </p>
+              </div>
+
+              <div className="w-full md:w-52">
+                <div className="flex justify-between text-xs mb-2">
+                  <span className="text-slate-400">
+                    Similarity
+                  </span>
+
+                  <span className="font-semibold text-blue-600">
+                    {similar.similarity_score}%
+                  </span>
+                </div>
+
+                <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
+                  <div
+                    className="h-full bg-blue-600 rounded-full"
+                    style={{ width: `${similar.similarity_score}%` }}
+                  />
+                </div>
+              </div>
+
+              <button
+                onClick={() => navigate(`/works/${encodeURIComponent(similar.id)}`)}
+                className="px-4 py-2.5 rounded-xl border border-slate-200 text-sm font-medium text-slate-700 hover:bg-slate-50 transition"
+              >
+                Compare →
+              </button>
+            </div>
+          ))}
+
+          {similarWorks.length === 0 && (
+            <div className="px-6 py-8 text-center text-sm text-slate-500">
+              No similar works were identified for this work.
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Review Action */}
+      <div className="bg-blue-50 border border-blue-200 rounded-2xl p-6">
+        <div className="flex flex-col lg:flex-row lg:items-center gap-5">
+          <div className="w-11 h-11 rounded-xl bg-blue-600 text-white flex items-center justify-center shrink-0">
+            ✓
+          </div>
+
+          <div className="flex-1">
+            <h3 className="font-semibold text-blue-950">
+              Analyst Review Recommended
+            </h3>
+
+            <p className="text-sm text-blue-900/75 mt-1 leading-6">
+              Review the highlighted signals, supporting records, and
+              potentially similar works before deciding on further action.
+            </p>
+          </div>
+
+          <button
+            onClick={() => navigate('/copilot')}
+            className="px-5 py-3 rounded-xl bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 transition whitespace-nowrap"
+          >
+            Ask AI Copilot →
+          </button>
+        </div>
+      </div>
+
+      {/* Disclaimer */}
+      <div className="mt-5 text-center">
+        <p className="text-xs text-slate-400 max-w-3xl mx-auto leading-5">
+          AI-assisted analysis is provided for monitoring and decision
+          support. A risk indicator does not establish fraud, misconduct,
+          or wrongdoing. Final assessment remains with authorized human
+          reviewers.
+        </p>
+      </div>
+    </div>
+  )
+}
+
+export default RiskAnalysis
+

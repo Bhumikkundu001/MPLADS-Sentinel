@@ -1,0 +1,190 @@
+{
+  "tests": [
+    {
+      "name": "1. GET /works default pagination",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "1b. default limit=50, offset=0",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "1c. does not return all 38,265 by default",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "1d. response has items/works/total/limit/offset",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "2. GET /works with offset returns different page",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "3. GET /works?q=road",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "3b. q=road results mention road-like text",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "4. GET /works?state=Uttar Pradesh",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "5. GET /works?status=Completed",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "6. GET /works?risk=Medium",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "6b. risk_level alias still works",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "7. combined filters (house + risk)",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "8. total count correctness (house=Lok Sabha)",
+      "status": "PASS",
+      "detail": "api total=13657 expected=13657"
+    },
+    {
+      "name": "9. GET /works/{real_id}",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "9b. GET /works/{synthetic RS-SR id}",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "9c. GET /works/{fake_id} -> 404",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "10. GET /works/{real_id}/similar",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "10b. similar endpoint is fast (<200ms)",
+      "status": "PASS",
+      "detail": "13.1ms"
+    },
+    {
+      "name": "11. exactly 5 similarity results",
+      "status": "PASS",
+      "detail": "got 5"
+    },
+    {
+      "name": "12. no self-similarity",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "13. similarity results exist in staging works table",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "13b. no demo_seed rows among similar works",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "13c. similarity_score is 0-100 percentage, descending",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "14. GET /risk",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "14b. /risk summary total_works matches staging",
+      "status": "PASS",
+      "detail": "api=38265 db=38265"
+    },
+    {
+      "name": "14c. /risk is fast (<500ms) despite 38,265 rows",
+      "status": "PASS",
+      "detail": "198.3ms"
+    },
+    {
+      "name": "15. GET /risk/{real_id}",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "15b. progress is null for real record (not fabricated)",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "16. GET /analytics",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "16b. /analytics is fast (<1000ms) despite 38,265 rows",
+      "status": "PASS",
+      "detail": "473.7ms"
+    },
+    {
+      "name": "17. production db still exactly 92 rows",
+      "status": "PASS",
+      "detail": "count=92, sources=[('demo_seed', 92)]"
+    },
+    {
+      "name": "18. staging still 38,265 real works",
+      "status": "PASS",
+      "detail": "count=38265"
+    },
+    {
+      "name": "19. work_similarities still 191,325 rows",
+      "status": "PASS",
+      "detail": "count=191325"
+    },
+    {
+      "name": "20. Phase 4 derived aggregates unchanged (count/sum risk_score/anomaly count/medium count)",
+      "status": "PASS",
+      "detail": "before=(38265, 560505, 1914, 206) after=(38265, 560505, 1914, 206)"
+    }
+  ],
+  "generated_at": "2026-09-12T14:33:14.144602Z",
+  "summary": {
+    "total_tests": 34,
+    "passed": 34,
+    "failed": 0,
+    "failures": [],
+    "all_passed": true
+  },
+  "test_ids_used": {
+    "lok_sabha_id": "WS/MP005/2024-2025/145074",
+    "rajya_sabha_real_id": "WS/MP001/2023-2024/103702",
+    "rajya_sabha_synthetic_id": "RS-SR-10038",
+    "high_similarity_id": "RS-SR-10038"
+  },
+  "staging_total_works": 38265,
+  "staging_similarity_total": 191325
+}

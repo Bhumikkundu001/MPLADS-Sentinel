@@ -1,0 +1,61 @@
+{
+  "phase": 7,
+  "title": "Frontend Real-Data Integration",
+  "files_modified": [
+    "src/services/api.js",
+    "src/pages/Works.jsx",
+    "src/pages/WorkDetails.jsx",
+    "src/pages/RiskAnalysis.jsx",
+    "src/pages/SimilarWorks.jsx",
+    "src/pages/Dashboard.jsx",
+    "src/pages/RiskOverview.jsx",
+    "src/pages/Alerts.jsx",
+    "src/pages/Copilot.jsx",
+    "src/pages/Admin.jsx",
+    "src/pages/Analytics.jsx"
+  ],
+  "backend_files_modified": [],
+  "mock_files_removed": [],
+  "mock_files_confirmed_unused": ["src/mock/works.js", "src/mock/risk.js"],
+  "build_result": "pass",
+  "lint_result": "pass (0 errors, 0 warnings)",
+  "bugs_found_and_fixed": [
+    {
+      "description": "14 navigation/URL call sites did not encodeURIComponent() work IDs containing '/', breaking routing and API calls for the majority of real records",
+      "fix": "encodeWorkId()/encodeURIComponent() applied at every call site (api.js x3, navigate() x11)",
+      "verified_via": "react-router matchPath() proof + live API calls with %2F-encoded IDs"
+    },
+    {
+      "description": "RiskAnalysis.jsx assumed the old demo indicator shape {name, level, score, description}; real Phase 4 indicators use {type, message, observed_value, threshold, points} and rendered as undefined/broken",
+      "fix": "getIndicatorMeta() compatibility layer supporting both shapes",
+      "verified_via": "live GET /risk/{id} against staging, confirmed correct rendering logic for real indicator payloads"
+    },
+    {
+      "description": "react-hooks/set-state-in-effect lint error introduced by initial pagination-reset effect",
+      "fix": "moved offset-reset into each filter's onChange handler instead of a useEffect"
+    }
+  ],
+  "known_limitations": [
+    "WorkSimilarity.to_dict() has no 'house' field; cannot be shown on Similar Works cards without a backend change (not made, per scope)",
+    "Dashboard 'Completed'/completion_rate reads 0 for real data because backend's exact-match 'Completed' status differs from real 'Work Completed' vocabulary; not patched (backend change out of scope)",
+    "Status filter is free-text (no distinct-status endpoint exists, and real vocabulary differs from old demo vocabulary)",
+    "State dropdown is a static 32-value snapshot documented in code, derived once from staging, not live-aggregated",
+    "No real browser click-through was performed in this environment; verified via build/lint, react-router matchPath proofs, and live API-contract testing instead"
+  ],
+  "live_verification": {
+    "backend_instance": "temporary, port 8001, bound to mplads_sentinel_staging.db (38265 works, 191325 similarities)",
+    "production_instance_left_running": "port 8000, untouched throughout",
+    "endpoints_verified": [
+      "GET /works (pagination, q, state, status, risk, combined filters)",
+      "GET /works/{slash-containing id}",
+      "GET /works/{slash-containing id}/similar",
+      "GET /risk/{slash-containing id}",
+      "GET /analytics",
+      "GET /alerts",
+      "GET /risk",
+      "POST /copilot"
+    ],
+    "slash_id_tested": "WS/MP005/2024-2025/145074"
+  },
+  "stop_condition": "Phase 7 complete per task instructions; waiting for approval before Phase 8 (Copilot real-data integration)"
+}

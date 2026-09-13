@@ -1,0 +1,420 @@
+{
+  "1_dataset_integrity": {
+    "total_records": 38265,
+    "total_expected": 38265,
+    "lok_sabha_records": 13657,
+    "lok_sabha_expected": 13657,
+    "rajya_sabha_records": 24608,
+    "rajya_sabha_expected": 24608,
+    "duplicate_ids": 0,
+    "null_ids": 0,
+    "cross_house_collisions": 0,
+    "data_source_values": [
+      "lok_sabha_real",
+      "rajya_sabha_real"
+    ],
+    "dataset_version_values": [
+      "lok_sabha_final_processed_ml_master_v1",
+      "rajya_sabha_final_processed_ml_master_v1"
+    ],
+    "house_values": [
+      "Lok Sabha",
+      "Rajya Sabha"
+    ],
+    "grand_total_row_present": false,
+    "pass": true
+  },
+  "2_field_validation": {
+    "lok_sabha": {
+      "rows_checked": 13657,
+      "mismatch_count": 0,
+      "sample_mismatches": []
+    },
+    "rajya_sabha": {
+      "rows_checked": 24608,
+      "mismatch_count": 0,
+      "sample_mismatches": []
+    },
+    "mismatches": []
+  },
+  "3_null_analysis": {
+    "lok_sabha_real": {
+      "state": {
+        "null_count": 0,
+        "null_pct": 0.0
+      },
+      "mp_name": {
+        "null_count": 0,
+        "null_pct": 0.0
+      },
+      "constituency": {
+        "null_count": 0,
+        "null_pct": 0.0
+      },
+      "category": {
+        "null_count": 0,
+        "null_pct": 0.0
+      },
+      "raw_status": {
+        "null_count": 6667,
+        "null_pct": 48.8
+      },
+      "status": {
+        "null_count": 6667,
+        "null_pct": 48.8
+      },
+      "recommended_amount": {
+        "null_count": 0,
+        "null_pct": 0.0
+      },
+      "sanctioned_amount": {
+        "null_count": 6667,
+        "null_pct": 48.8
+      },
+      "expenditure": {
+        "null_count": 9364,
+        "null_pct": 68.6
+      },
+      "actual_completion": {
+        "null_count": 9360,
+        "null_pct": 68.5
+      },
+      "is_reported_complete": {
+        "null_count": 0,
+        "null_pct": 0.0
+      },
+      "progress": {
+        "null_count": 13657,
+        "null_pct": 100.0
+      }
+    },
+    "rajya_sabha_real": {
+      "state": {
+        "null_count": 0,
+        "null_pct": 0.0
+      },
+      "mp_name": {
+        "null_count": 0,
+        "null_pct": 0.0
+      },
+      "constituency": {
+        "null_count": 24608,
+        "null_pct": 100.0
+      },
+      "category": {
+        "null_count": 5,
+        "null_pct": 0.0
+      },
+      "raw_status": {
+        "null_count": 5636,
+        "null_pct": 22.9
+      },
+      "status": {
+        "null_count": 5636,
+        "null_pct": 22.9
+      },
+      "recommended_amount": {
+        "null_count": 0,
+        "null_pct": 0.0
+      },
+      "sanctioned_amount": {
+        "null_count": 5636,
+        "null_pct": 22.9
+      },
+      "expenditure": {
+        "null_count": 16791,
+        "null_pct": 68.2
+      },
+      "actual_completion": {
+        "null_count": 19628,
+        "null_pct": 79.8
+      },
+      "is_reported_complete": {
+        "null_count": 0,
+        "null_pct": 0.0
+      },
+      "progress": {
+        "null_count": 24608,
+        "null_pct": 100.0
+      }
+    },
+    "progress_all_null_check": true
+  },
+  "4_status_analysis": {
+    "lok_sabha_real": [
+      {
+        "value": null,
+        "count": 6667,
+        "pct": 48.8
+      },
+      {
+        "value": "Physical Inspection",
+        "count": 4357,
+        "pct": 31.9
+      },
+      {
+        "value": "Vendor Identification",
+        "count": 957,
+        "pct": 7.0
+      },
+      {
+        "value": "Sanction",
+        "count": 675,
+        "pct": 4.9
+      },
+      {
+        "value": "Work Completed",
+        "count": 537,
+        "pct": 3.9
+      },
+      {
+        "value": "Work Partially Completed",
+        "count": 444,
+        "pct": 3.3
+      },
+      {
+        "value": "Time Estimation",
+        "count": 20,
+        "pct": 0.1
+      }
+    ],
+    "rajya_sabha_real": [
+      {
+        "value": "Physical Inspection",
+        "count": 9670,
+        "pct": 39.3
+      },
+      {
+        "value": null,
+        "count": 5636,
+        "pct": 22.9
+      },
+      {
+        "value": "Sanction",
+        "count": 3630,
+        "pct": 14.8
+      },
+      {
+        "value": "Vendor Identification",
+        "count": 2819,
+        "pct": 11.5
+      },
+      {
+        "value": "Work Partially Completed",
+        "count": 1789,
+        "pct": 7.3
+      },
+      {
+        "value": "Work Completed",
+        "count": 982,
+        "pct": 4.0
+      },
+      {
+        "value": "Time Estimation",
+        "count": 82,
+        "pct": 0.3
+      }
+    ]
+  },
+  "5_completion_validation": {
+    "lok_sabha_real": {
+      "csv_completed_value_counts": {
+        "0": 9360,
+        "1": 4297
+      },
+      "staged_is_reported_complete_true": 4297,
+      "staged_is_reported_complete_false": 9360,
+      "staged_is_reported_complete_null": 0,
+      "complete_with_completion_date": 4297,
+      "complete_without_completion_date": 0,
+      "has_completion_date_but_not_flagged_complete": 0,
+      "progress_fabricated": false
+    },
+    "rajya_sabha_real": {
+      "csv_completed_value_counts": {
+        "0": 19628,
+        "1": 4980
+      },
+      "staged_is_reported_complete_true": 4980,
+      "staged_is_reported_complete_false": 19628,
+      "staged_is_reported_complete_null": 0,
+      "complete_with_completion_date": 4980,
+      "complete_without_completion_date": 0,
+      "has_completion_date_but_not_flagged_complete": 0,
+      "progress_fabricated": false
+    }
+  },
+  "6_financial_validation": {
+    "lok_sabha_recommended_amount": {
+      "label": "LS recommended_amount",
+      "csv_sum_converted_to_lakhs": 71149.2,
+      "staged_sum_lakhs": 71152.76,
+      "abs_diff": 3.56,
+      "within_tolerance": "True"
+    },
+    "lok_sabha_sanctioned_amount": {
+      "label": "LS sanctioned_amount",
+      "csv_sum_converted_to_lakhs": 37707.3,
+      "staged_sum_lakhs": 37708.38,
+      "abs_diff": 1.08,
+      "within_tolerance": "True"
+    },
+    "lok_sabha_expenditure": {
+      "label": "LS expenditure (amount_disbursed_rs)",
+      "csv_sum_converted_to_lakhs": 23683.33,
+      "staged_sum_lakhs": 23684.66,
+      "abs_diff": 1.33,
+      "within_tolerance": "True"
+    },
+    "rajya_sabha_recommended_amount": {
+      "label": "RS recommended_amount",
+      "csv_sum_converted_to_lakhs": 218227.1,
+      "staged_sum_lakhs": 218227.21,
+      "abs_diff": 0.11,
+      "within_tolerance": "True"
+    },
+    "rajya_sabha_sanctioned_amount": {
+      "label": "RS sanctioned_amount",
+      "csv_sum_converted_to_lakhs": 166491.39,
+      "staged_sum_lakhs": 166491.73,
+      "abs_diff": 0.34,
+      "within_tolerance": "True"
+    },
+    "rajya_sabha_expenditure": {
+      "label": "RS expenditure (expenditure_total_rs)",
+      "csv_sum_converted_to_lakhs": 62106.96,
+      "staged_sum_lakhs": 62107.63,
+      "abs_diff": 0.67,
+      "within_tolerance": "True"
+    }
+  },
+  "6b_allocated_amount_not_leaked": {
+    "lok_sabha": {
+      "rows_matching_allocated_amount": 0,
+      "total_checked": 13657
+    },
+    "rajya_sabha": {
+      "rows_matching_allocated_amount": 0,
+      "total_checked": 24608
+    }
+  },
+  "7_date_validation": {
+    "lok_sabha_real": {
+      "proposed_date_parse_failures": 0,
+      "actual_completion_parse_failures": 0,
+      "recommended_after_completion_count": 0,
+      "min_proposed_date": "2024-07-08 00:00:00",
+      "max_proposed_date": "2025-10-02 00:00:00",
+      "min_actual_completion": "2024-08-12 00:00:00",
+      "max_actual_completion": "2026-08-21 00:00:00",
+      "recommended_date_after_sanctioned_date_in_source": 0,
+      "sanctioned_date_after_completion_date_in_source": 0
+    },
+    "rajya_sabha_real": {
+      "proposed_date_parse_failures": 0,
+      "actual_completion_parse_failures": 0,
+      "recommended_after_completion_count": 0,
+      "min_proposed_date": "2023-06-14 00:00:00",
+      "max_proposed_date": "2026-08-25 00:00:00",
+      "min_actual_completion": "2023-08-02 00:00:00",
+      "max_actual_completion": "2026-08-22 00:00:00",
+      "recommended_date_after_sanctioned_date_in_source": 0,
+      "sanctioned_date_after_completion_date_in_source": 0
+    }
+  },
+  "8_mp_name_normalization": {
+    "rs_raw_names_with_tenure_suffix": 24608,
+    "rs_total_non_null_mp_names": 24608,
+    "cleaned_names_still_containing_suffix_pattern": 0,
+    "distinct_raw_names_collapsed_by_cleanup": 0,
+    "raw_value_preserved_in_work_raw_source": true
+  },
+  "9_category_analysis": {
+    "lok_sabha_real": [
+      {
+        "value": "Normal/Others",
+        "count": 13495,
+        "pct": 98.8
+      },
+      {
+        "value": "Repair And Renovation",
+        "count": 121,
+        "pct": 0.9
+      },
+      {
+        "value": "Trust And Society",
+        "count": 40,
+        "pct": 0.3
+      },
+      {
+        "value": "Bar And Associations",
+        "count": 1,
+        "pct": 0.0
+      }
+    ],
+    "rajya_sabha_real": [
+      {
+        "value": "Normal/Others",
+        "count": 23840,
+        "pct": 96.9
+      },
+      {
+        "value": "Repair And Renovation",
+        "count": 406,
+        "pct": 1.6
+      },
+      {
+        "value": "Trust And Society",
+        "count": 349,
+        "pct": 1.4
+      },
+      {
+        "value": "Bar And Associations",
+        "count": 8,
+        "pct": 0.0
+      },
+      {
+        "value": null,
+        "count": 5,
+        "pct": 0.0
+      }
+    ]
+  },
+  "10_source_traceability": {
+    "works_rows": 38265,
+    "raw_source_rows": 38265,
+    "works_missing_raw_source": 0,
+    "raw_source_orphans": 0,
+    "sample_missing": [],
+    "sample_orphans": [],
+    "fully_traceable": true
+  },
+  "11_raw_source_table": {
+    "counts_by_data_source": {
+      "rajya_sabha_real": 24608,
+      "lok_sabha_real": 13657
+    },
+    "total": 38265,
+    "expected_total": 38265,
+    "sample_raw_row_column_count": 31,
+    "grand_total_row_present_in_raw": false
+  },
+  "production_untouched": {
+    "production_row_count": 92,
+    "expected": 92,
+    "production_data_sources": [
+      {
+        "data_source": "demo_seed",
+        "c": 92
+      }
+    ],
+    "untouched": true
+  },
+  "overall_pass": true,
+  "warnings": [
+    "Some rows have a completion_date but is_reported_complete is not True (or vice-versa) \u2014 see completion_validation counts; this is a source data-quality signal, not an import bug, and progress was NOT fabricated from either field.",
+    "Chronology anomalies (recommended_date after sanctioned_date, or sanctioned_date after completion_date) are reported as data-quality/workflow signals only \u2014 not treated as fraud."
+  ],
+  "fixes_made": [],
+  "generated_at": "2026-09-12T12:01:52.361090Z"
+}

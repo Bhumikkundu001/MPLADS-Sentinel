@@ -1,0 +1,755 @@
+{
+  "total_real_records": 38265,
+  "records_with_risk_score": 38265,
+  "records_without_enough_data_for_risk": 0,
+  "risk_level_counts": {
+    "Low": 38059,
+    "Medium": 206
+  },
+  "risk_status_counts": {
+    "Normal": 38059,
+    "Monitor Closely": 206
+  },
+  "requires_review_count": 0,
+  "monitor_closely_count": 206,
+  "risk_score_stats": {
+    "min": 0.0,
+    "max": 50.0,
+    "mean": 14.65,
+    "median": 20.0
+  },
+  "anomaly_count": 1914,
+  "anomaly_rate_pct": 5.0,
+  "house_breakdown": {
+    "lok_sabha_real": {
+      "count": 13657,
+      "risk_level_counts": {
+        "Low": 13657
+      },
+      "mean_risk_score": 18.17,
+      "anomaly_count": 683,
+      "anomaly_rate_pct": 5.0
+    },
+    "rajya_sabha_real": {
+      "count": 24608,
+      "risk_level_counts": {
+        "Low": 24402,
+        "Medium": 206
+      },
+      "mean_risk_score": 12.69,
+      "anomaly_count": 1231,
+      "anomaly_rate_pct": 5.0
+    }
+  },
+  "indicator_frequency": {
+    "long_pending_recommendation": 19161,
+    "expenditure_sanction_ratio": 8909,
+    "statistical_amount_outlier": 2910,
+    "ml_anomaly_evidence": 1914
+  },
+  "records_with_multiple_rule_signals": 5503,
+  "records_with_exactly_one_rule_signal": 19768,
+  "records_with_zero_rule_signals": 12994,
+  "workflow_inconsistency_count": 0,
+  "statistical_outlier_bounds": {
+    "Lok Sabha": {
+      "recommended": {
+        "q1": 1.72,
+        "q3": 5.29,
+        "iqr": 3.57,
+        "upper_bound": 10.64,
+        "n": 13657
+      },
+      "sanctioned": {
+        "q1": 1.91,
+        "q3": 6.0,
+        "iqr": 4.09,
+        "upper_bound": 12.13,
+        "n": 6990
+      }
+    },
+    "Rajya Sabha": {
+      "recommended": {
+        "q1": 2.43,
+        "q3": 10.0,
+        "iqr": 7.57,
+        "upper_bound": 21.36,
+        "n": 24608
+      },
+      "sanctioned": {
+        "q1": 2.43,
+        "q3": 9.98,
+        "iqr": 7.55,
+        "upper_bound": 21.3,
+        "n": 18972
+      }
+    }
+  },
+  "anomaly_model_config": {
+    "Lok Sabha": {
+      "n_estimators": 200,
+      "contamination": 0.05,
+      "random_state": 42,
+      "feature_names": [
+        "log_recommended_amount",
+        "log_sanctioned_amount",
+        "log_expenditure",
+        "deviation_pct",
+        "expenditure_ratio",
+        "elapsed_days",
+        "sanctioned_missing",
+        "expenditure_missing",
+        "deviation_missing",
+        "ratio_missing"
+      ],
+      "n_records": 13657,
+      "n_flagged": 683
+    },
+    "Rajya Sabha": {
+      "n_estimators": 200,
+      "contamination": 0.05,
+      "random_state": 42,
+      "feature_names": [
+        "log_recommended_amount",
+        "log_sanctioned_amount",
+        "log_expenditure",
+        "deviation_pct",
+        "expenditure_ratio",
+        "elapsed_days",
+        "sanctioned_missing",
+        "expenditure_missing",
+        "deviation_missing",
+        "ratio_missing"
+      ],
+      "n_records": 24608,
+      "n_flagged": 1231
+    }
+  },
+  "evaluation_date": "2026-09-01",
+  "risk_computed_at_sample": "2026-09-12T12:13:53.138154",
+  "safety_checks": {
+    "production_row_count": 92,
+    "production_untouched": true,
+    "production_data_sources": [
+      {
+        "data_source": "demo_seed",
+        "c": 92
+      }
+    ],
+    "no_demo_seed_rows_in_staging_scored": true
+  },
+  "spot_check_top20": [
+    {
+      "id": "WS/MP163/2025-2026/70364",
+      "data_source": "rajya_sabha_real",
+      "risk_score": 50,
+      "risk_level": "Medium",
+      "recommended_amount": 39.5,
+      "sanctioned_amount": 39.5,
+      "expenditure": 36.42,
+      "is_anomaly": true,
+      "indicators_verified": [
+        {
+          "type": "expenditure_sanction_ratio",
+          "points": 15,
+          "consistent_with_data": true
+        },
+        {
+          "type": "long_pending_recommendation",
+          "points": 20,
+          "consistent_with_data": true
+        },
+        {
+          "type": "statistical_amount_outlier",
+          "points": 15,
+          "consistent_with_data": true
+        },
+        {
+          "type": "ml_anomaly_evidence",
+          "points": 0,
+          "consistent_with_data": true
+        }
+      ]
+    },
+    {
+      "id": "WS/MP842/2024-2025/144267",
+      "data_source": "rajya_sabha_real",
+      "risk_score": 50,
+      "risk_level": "Medium",
+      "recommended_amount": 30.0,
+      "sanctioned_amount": 30.0,
+      "expenditure": 30.0,
+      "is_anomaly": false,
+      "indicators_verified": [
+        {
+          "type": "expenditure_sanction_ratio",
+          "points": 15,
+          "consistent_with_data": true
+        },
+        {
+          "type": "long_pending_recommendation",
+          "points": 20,
+          "consistent_with_data": true
+        },
+        {
+          "type": "statistical_amount_outlier",
+          "points": 15,
+          "consistent_with_data": true
+        }
+      ]
+    },
+    {
+      "id": "WS/MP844/2025-2026/221107",
+      "data_source": "rajya_sabha_real",
+      "risk_score": 50,
+      "risk_level": "Medium",
+      "recommended_amount": 87.63,
+      "sanctioned_amount": 87.63,
+      "expenditure": 86.18,
+      "is_anomaly": true,
+      "indicators_verified": [
+        {
+          "type": "expenditure_sanction_ratio",
+          "points": 15,
+          "consistent_with_data": true
+        },
+        {
+          "type": "long_pending_recommendation",
+          "points": 20,
+          "consistent_with_data": true
+        },
+        {
+          "type": "statistical_amount_outlier",
+          "points": 15,
+          "consistent_with_data": true
+        },
+        {
+          "type": "ml_anomaly_evidence",
+          "points": 0,
+          "consistent_with_data": true
+        }
+      ]
+    },
+    {
+      "id": "WS/MP233/2025-2026/225208",
+      "data_source": "rajya_sabha_real",
+      "risk_score": 50,
+      "risk_level": "Medium",
+      "recommended_amount": 100.0,
+      "sanctioned_amount": 100.0,
+      "expenditure": 100.0,
+      "is_anomaly": true,
+      "indicators_verified": [
+        {
+          "type": "expenditure_sanction_ratio",
+          "points": 15,
+          "consistent_with_data": true
+        },
+        {
+          "type": "long_pending_recommendation",
+          "points": 20,
+          "consistent_with_data": true
+        },
+        {
+          "type": "statistical_amount_outlier",
+          "points": 15,
+          "consistent_with_data": true
+        },
+        {
+          "type": "ml_anomaly_evidence",
+          "points": 0,
+          "consistent_with_data": true
+        }
+      ]
+    },
+    {
+      "id": "WS/MP078/2025-2026/220891",
+      "data_source": "rajya_sabha_real",
+      "risk_score": 50,
+      "risk_level": "Medium",
+      "recommended_amount": 21.44,
+      "sanctioned_amount": 21.44,
+      "expenditure": 21.44,
+      "is_anomaly": false,
+      "indicators_verified": [
+        {
+          "type": "expenditure_sanction_ratio",
+          "points": 15,
+          "consistent_with_data": true
+        },
+        {
+          "type": "long_pending_recommendation",
+          "points": 20,
+          "consistent_with_data": true
+        },
+        {
+          "type": "statistical_amount_outlier",
+          "points": 15,
+          "consistent_with_data": true
+        }
+      ]
+    },
+    {
+      "id": "WS/MP165/2025-2026/216569",
+      "data_source": "rajya_sabha_real",
+      "risk_score": 50,
+      "risk_level": "Medium",
+      "recommended_amount": 36.0,
+      "sanctioned_amount": 36.0,
+      "expenditure": 36.0,
+      "is_anomaly": true,
+      "indicators_verified": [
+        {
+          "type": "expenditure_sanction_ratio",
+          "points": 15,
+          "consistent_with_data": true
+        },
+        {
+          "type": "long_pending_recommendation",
+          "points": 20,
+          "consistent_with_data": true
+        },
+        {
+          "type": "statistical_amount_outlier",
+          "points": 15,
+          "consistent_with_data": true
+        },
+        {
+          "type": "ml_anomaly_evidence",
+          "points": 0,
+          "consistent_with_data": true
+        }
+      ]
+    },
+    {
+      "id": "WS/MP078/2025-2026/220892",
+      "data_source": "rajya_sabha_real",
+      "risk_score": 50,
+      "risk_level": "Medium",
+      "recommended_amount": 25.0,
+      "sanctioned_amount": 25.0,
+      "expenditure": 24.98,
+      "is_anomaly": false,
+      "indicators_verified": [
+        {
+          "type": "expenditure_sanction_ratio",
+          "points": 15,
+          "consistent_with_data": true
+        },
+        {
+          "type": "long_pending_recommendation",
+          "points": 20,
+          "consistent_with_data": true
+        },
+        {
+          "type": "statistical_amount_outlier",
+          "points": 15,
+          "consistent_with_data": true
+        }
+      ]
+    },
+    {
+      "id": "WS/MP18287/2026-2027/146919",
+      "data_source": "rajya_sabha_real",
+      "risk_score": 50,
+      "risk_level": "Medium",
+      "recommended_amount": 24.91,
+      "sanctioned_amount": 24.91,
+      "expenditure": 24.87,
+      "is_anomaly": false,
+      "indicators_verified": [
+        {
+          "type": "expenditure_sanction_ratio",
+          "points": 15,
+          "consistent_with_data": true
+        },
+        {
+          "type": "long_pending_recommendation",
+          "points": 20,
+          "consistent_with_data": true
+        },
+        {
+          "type": "statistical_amount_outlier",
+          "points": 15,
+          "consistent_with_data": true
+        }
+      ]
+    },
+    {
+      "id": "WS/MP096/2025-2026/145348",
+      "data_source": "rajya_sabha_real",
+      "risk_score": 50,
+      "risk_level": "Medium",
+      "recommended_amount": 23.17,
+      "sanctioned_amount": 23.17,
+      "expenditure": 23.17,
+      "is_anomaly": false,
+      "indicators_verified": [
+        {
+          "type": "expenditure_sanction_ratio",
+          "points": 15,
+          "consistent_with_data": true
+        },
+        {
+          "type": "long_pending_recommendation",
+          "points": 20,
+          "consistent_with_data": true
+        },
+        {
+          "type": "statistical_amount_outlier",
+          "points": 15,
+          "consistent_with_data": true
+        }
+      ]
+    },
+    {
+      "id": "WS/MP014/2025-2026/222174",
+      "data_source": "rajya_sabha_real",
+      "risk_score": 50,
+      "risk_level": "Medium",
+      "recommended_amount": 67.0,
+      "sanctioned_amount": 67.0,
+      "expenditure": 67.0,
+      "is_anomaly": true,
+      "indicators_verified": [
+        {
+          "type": "expenditure_sanction_ratio",
+          "points": 15,
+          "consistent_with_data": true
+        },
+        {
+          "type": "long_pending_recommendation",
+          "points": 20,
+          "consistent_with_data": true
+        },
+        {
+          "type": "statistical_amount_outlier",
+          "points": 15,
+          "consistent_with_data": true
+        },
+        {
+          "type": "ml_anomaly_evidence",
+          "points": 0,
+          "consistent_with_data": true
+        }
+      ]
+    },
+    {
+      "id": "WS/MP18364/2025-2026/204268",
+      "data_source": "rajya_sabha_real",
+      "risk_score": 50,
+      "risk_level": "Medium",
+      "recommended_amount": 49.95,
+      "sanctioned_amount": 49.95,
+      "expenditure": 49.95,
+      "is_anomaly": true,
+      "indicators_verified": [
+        {
+          "type": "expenditure_sanction_ratio",
+          "points": 15,
+          "consistent_with_data": true
+        },
+        {
+          "type": "long_pending_recommendation",
+          "points": 20,
+          "consistent_with_data": true
+        },
+        {
+          "type": "statistical_amount_outlier",
+          "points": 15,
+          "consistent_with_data": true
+        },
+        {
+          "type": "ml_anomaly_evidence",
+          "points": 0,
+          "consistent_with_data": true
+        }
+      ]
+    },
+    {
+      "id": "WS/MP18364/2025-2026/204269",
+      "data_source": "rajya_sabha_real",
+      "risk_score": 50,
+      "risk_level": "Medium",
+      "recommended_amount": 49.95,
+      "sanctioned_amount": 49.95,
+      "expenditure": 49.95,
+      "is_anomaly": true,
+      "indicators_verified": [
+        {
+          "type": "expenditure_sanction_ratio",
+          "points": 15,
+          "consistent_with_data": true
+        },
+        {
+          "type": "long_pending_recommendation",
+          "points": 20,
+          "consistent_with_data": true
+        },
+        {
+          "type": "statistical_amount_outlier",
+          "points": 15,
+          "consistent_with_data": true
+        },
+        {
+          "type": "ml_anomaly_evidence",
+          "points": 0,
+          "consistent_with_data": true
+        }
+      ]
+    },
+    {
+      "id": "WS/MP014/2025-2026/222175",
+      "data_source": "rajya_sabha_real",
+      "risk_score": 50,
+      "risk_level": "Medium",
+      "recommended_amount": 66.74,
+      "sanctioned_amount": 66.74,
+      "expenditure": 66.74,
+      "is_anomaly": true,
+      "indicators_verified": [
+        {
+          "type": "expenditure_sanction_ratio",
+          "points": 15,
+          "consistent_with_data": true
+        },
+        {
+          "type": "long_pending_recommendation",
+          "points": 20,
+          "consistent_with_data": true
+        },
+        {
+          "type": "statistical_amount_outlier",
+          "points": 15,
+          "consistent_with_data": true
+        },
+        {
+          "type": "ml_anomaly_evidence",
+          "points": 0,
+          "consistent_with_data": true
+        }
+      ]
+    },
+    {
+      "id": "WS/MP116/2025-2026/136776",
+      "data_source": "rajya_sabha_real",
+      "risk_score": 50,
+      "risk_level": "Medium",
+      "recommended_amount": 49.0,
+      "sanctioned_amount": 49.0,
+      "expenditure": 48.23,
+      "is_anomaly": true,
+      "indicators_verified": [
+        {
+          "type": "expenditure_sanction_ratio",
+          "points": 15,
+          "consistent_with_data": true
+        },
+        {
+          "type": "long_pending_recommendation",
+          "points": 20,
+          "consistent_with_data": true
+        },
+        {
+          "type": "statistical_amount_outlier",
+          "points": 15,
+          "consistent_with_data": true
+        },
+        {
+          "type": "ml_anomaly_evidence",
+          "points": 0,
+          "consistent_with_data": true
+        }
+      ]
+    },
+    {
+      "id": "WS/MP186/2024-2025/141250",
+      "data_source": "rajya_sabha_real",
+      "risk_score": 50,
+      "risk_level": "Medium",
+      "recommended_amount": 45.0,
+      "sanctioned_amount": 45.0,
+      "expenditure": 44.78,
+      "is_anomaly": true,
+      "indicators_verified": [
+        {
+          "type": "expenditure_sanction_ratio",
+          "points": 15,
+          "consistent_with_data": true
+        },
+        {
+          "type": "long_pending_recommendation",
+          "points": 20,
+          "consistent_with_data": true
+        },
+        {
+          "type": "statistical_amount_outlier",
+          "points": 15,
+          "consistent_with_data": true
+        },
+        {
+          "type": "ml_anomaly_evidence",
+          "points": 0,
+          "consistent_with_data": true
+        }
+      ]
+    },
+    {
+      "id": "WS/MP139/2025-2026/103180",
+      "data_source": "rajya_sabha_real",
+      "risk_score": 50,
+      "risk_level": "Medium",
+      "recommended_amount": 26.83,
+      "sanctioned_amount": 26.83,
+      "expenditure": 26.7,
+      "is_anomaly": true,
+      "indicators_verified": [
+        {
+          "type": "expenditure_sanction_ratio",
+          "points": 15,
+          "consistent_with_data": true
+        },
+        {
+          "type": "long_pending_recommendation",
+          "points": 20,
+          "consistent_with_data": true
+        },
+        {
+          "type": "statistical_amount_outlier",
+          "points": 15,
+          "consistent_with_data": true
+        },
+        {
+          "type": "ml_anomaly_evidence",
+          "points": 0,
+          "consistent_with_data": true
+        }
+      ]
+    },
+    {
+      "id": "WS/MP188/2025-2026/228011",
+      "data_source": "rajya_sabha_real",
+      "risk_score": 50,
+      "risk_level": "Medium",
+      "recommended_amount": 35.0,
+      "sanctioned_amount": 35.0,
+      "expenditure": 35.0,
+      "is_anomaly": true,
+      "indicators_verified": [
+        {
+          "type": "expenditure_sanction_ratio",
+          "points": 15,
+          "consistent_with_data": true
+        },
+        {
+          "type": "long_pending_recommendation",
+          "points": 20,
+          "consistent_with_data": true
+        },
+        {
+          "type": "statistical_amount_outlier",
+          "points": 15,
+          "consistent_with_data": true
+        },
+        {
+          "type": "ml_anomaly_evidence",
+          "points": 0,
+          "consistent_with_data": true
+        }
+      ]
+    },
+    {
+      "id": "WS/MP186/2025-2026/218840",
+      "data_source": "rajya_sabha_real",
+      "risk_score": 50,
+      "risk_level": "Medium",
+      "recommended_amount": 40.0,
+      "sanctioned_amount": 40.0,
+      "expenditure": 39.62,
+      "is_anomaly": true,
+      "indicators_verified": [
+        {
+          "type": "expenditure_sanction_ratio",
+          "points": 15,
+          "consistent_with_data": true
+        },
+        {
+          "type": "long_pending_recommendation",
+          "points": 20,
+          "consistent_with_data": true
+        },
+        {
+          "type": "statistical_amount_outlier",
+          "points": 15,
+          "consistent_with_data": true
+        },
+        {
+          "type": "ml_anomaly_evidence",
+          "points": 0,
+          "consistent_with_data": true
+        }
+      ]
+    },
+    {
+      "id": "WS/MP235/2024-2025/144004",
+      "data_source": "rajya_sabha_real",
+      "risk_score": 50,
+      "risk_level": "Medium",
+      "recommended_amount": 50.07,
+      "sanctioned_amount": 50.07,
+      "expenditure": 50.07,
+      "is_anomaly": true,
+      "indicators_verified": [
+        {
+          "type": "expenditure_sanction_ratio",
+          "points": 15,
+          "consistent_with_data": true
+        },
+        {
+          "type": "long_pending_recommendation",
+          "points": 20,
+          "consistent_with_data": true
+        },
+        {
+          "type": "statistical_amount_outlier",
+          "points": 15,
+          "consistent_with_data": true
+        },
+        {
+          "type": "ml_anomaly_evidence",
+          "points": 0,
+          "consistent_with_data": true
+        }
+      ]
+    },
+    {
+      "id": "WS/MP235/2024-2025/144007",
+      "data_source": "rajya_sabha_real",
+      "risk_score": 50,
+      "risk_level": "Medium",
+      "recommended_amount": 31.7,
+      "sanctioned_amount": 31.7,
+      "expenditure": 31.7,
+      "is_anomaly": false,
+      "indicators_verified": [
+        {
+          "type": "expenditure_sanction_ratio",
+          "points": 15,
+          "consistent_with_data": true
+        },
+        {
+          "type": "long_pending_recommendation",
+          "points": 20,
+          "consistent_with_data": true
+        },
+        {
+          "type": "statistical_amount_outlier",
+          "points": 15,
+          "consistent_with_data": true
+        }
+      ]
+    }
+  ],
+  "spot_check_all_consistent": true,
+  "generated_at": "2026-09-12T13:16:24.431605Z"
+}

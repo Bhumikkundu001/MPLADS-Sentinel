@@ -1,0 +1,66 @@
+{
+  "overall_status": "PASS WITH LIMITATION",
+  "reason": "Automated/browser click-through unavailable in this execution environment; API-level, build, lint, routing, database-integrity, and source-level checks all passed.",
+  "environment_note": "Ports 8000/5173 were already occupied by externally-managed dev servers (port 8000 bound to demo DB) that could not be stopped from this session; validation used an isolated backend on port 8002 bound to staging instead.",
+  "journey_results": {
+    "login": "PASS (source review, prior-phase audit)",
+    "dashboard": "PASS",
+    "works_pagination": "PASS",
+    "search_filter": "PASS",
+    "slash_id": "PASS",
+    "risk_analysis": "PASS",
+    "similarity": "PASS",
+    "analytics": "PASS",
+    "alerts": "PASS",
+    "copilot_8_prompts": "PASS (with documented MPL-2026-00126 demo-only-ID clarification)",
+    "api_failure_handling": "PASS",
+    "empty_state": "PASS",
+    "refresh_spa_fallback": "PASS (verified via server mechanism, not literal browser refresh)",
+    "performance": "PASS"
+  },
+  "regression_suites_rerun": {
+    "phase4_validation": "38265 scored, 1914 anomalies, 0 High, production untouched",
+    "phase5_validation": "191325 relationships, 0 self-similarity, deterministic re-run confirmed",
+    "phase6_validation": "34/34 passed",
+    "phase8_validation": "90/90 passed (43 production + 47 staging)"
+  },
+  "build_result": "pass",
+  "lint_result": "pass (0 errors, 0 warnings)",
+  "terminology_safety_audit": "0 unsafe fraud/duplicate assertions found in frontend or backend application code",
+  "data_honesty_audit": "0 hardcoded fabricated statistics found (12458, 94.2%, 24 analysts, 187, hardcoded 92-works) in live-rendered pages",
+  "database_integrity": {
+    "staging_works": 38265,
+    "staging_similarities": 191325,
+    "production_works": 92,
+    "production_data_source": "demo_seed only",
+    "phase4_risk_score_sum_unchanged": 560505,
+    "phase4_anomaly_count_unchanged": 1914
+  },
+  "deployment_readiness_gaps": [
+    "No .gitignore in backend directory",
+    "Neither directory is a git repository (no version control)",
+    "Frontend has no .env / VITE_API_BASE_URL set (relies on hardcoded localhost:8000 fallback)",
+    "CORS ALLOWED_ORIGINS limited to localhost:5173/3000",
+    "Default DATABASE_URL points at demo DB, not staging",
+    "Frontend README is the unmodified default Vite template",
+    "No backend README",
+    "No static-host SPA rewrite rule (e.g. _redirects) for production deployment outside vite preview"
+  ],
+  "recommended_demo_work_ids": [
+    {"id": "WS/MP005/2024-2025/145074", "note": "Gujarat road construction, Low risk — good baseline + slash-ID demo"},
+    {"id": "WS/MP014/2025-2026/222174", "note": "Tamil Nadu school building, Medium risk, anomaly-flagged, 4 indicators — best risk/anomaly demo moment"},
+    {"id": "WS/MP032/2025-2026/200857", "note": "Andhra Pradesh hospital renovation, Medium risk, anomaly-flagged — backup"}
+  ],
+  "known_limitations": [
+    "No real browser click-through performed",
+    "MPL-2026-00126 only exists in demo DB, not staging",
+    "Pre-existing status-substring-match, completion-rate vocabulary mismatch, missing house field on similarity, and expenditure_analysis Python-loop limitations carried forward from earlier phases, all previously documented",
+    "Visual polish (text wrapping at various viewport widths) reviewed at source level only, not visually confirmed"
+  ],
+  "remaining_blockers": "None for a local hackathon demonstration.",
+  "recommended_demo_flow_minutes": "5-7",
+  "recommended_demo_sequence": [
+    "Login", "Dashboard", "Works search/filter", "Open a real work",
+    "Risk Analysis", "Similar Works", "Copilot", "Analytics", "Final decision-support message"
+  ]
+}
