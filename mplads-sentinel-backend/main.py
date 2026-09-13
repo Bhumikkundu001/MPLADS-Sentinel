@@ -29,7 +29,7 @@ allowed_origins = os.getenv(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=allowed_origins,
+    allow_origins="https://mplads-sentinel-gamma.vercel.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
