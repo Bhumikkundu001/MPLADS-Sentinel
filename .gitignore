@@ -38,4 +38,4 @@ dist/
 Thumbs.db
 
 # Logs
-*.log
+*.logmplads-sentinel-backend/create_users.py
