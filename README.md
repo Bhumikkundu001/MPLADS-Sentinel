@@ -1,6 +1,5 @@
 🚀 Key Features
 📊 1. Intelligent Monitoring Dashboard
-
 A centralized dashboard provides an overview of MPLADS data and analytical results.
 
 It can provide:
@@ -16,15 +15,12 @@ Constituency-wise analysis
 Anomaly insights
 Monitoring statistics
 🚨 2. AI-Assisted Anomaly Detection
-
 MPLADS Sentinel uses Isolation Forest to identify records exhibiting unusual patterns within the available data.
 
 The anomaly detection layer can help identify unusual patterns related to available project and financial characteristics.
 
 The output is treated as a risk indicator, not as proof of wrongdoing.
-
 🧠 3. Explainable Risk Scoring
-
 The platform combines available analytical indicators into a unified risk assessment.
 
 Instead of only showing a numerical score, MPLADS Sentinel is designed to explain the factors contributing to the assessment.
@@ -42,9 +38,7 @@ Contributing Indicators:
 The user can then inspect the available evidence behind the assessment.
 
 This makes the system more transparent and useful for human review.
-
 🔗 4. Semantic Similarity Analysis
-
 MPLADS Sentinel uses Sentence Transformers to analyze work descriptions and identify potentially similar recommendations.
 
 The system can help surface:
@@ -56,21 +50,19 @@ Potentially overlapping records requiring examination
 Semantic similarity does not automatically mean that two works are duplicates.
 
 The results are intended to support further review.
-
 🗺️ 5. Geographic Risk Map
-
 The Geographic Risk Map provides a visual representation of risk indicators across states and constituencies.
 
 Users can explore:
 
 India
-  ↓
+↓
 State
-  ↓
+↓
 Constituency
-  ↓
+↓
 Works
-  ↓
+↓
 Risk Analysis
 
 The map can provide:
@@ -83,9 +75,7 @@ State-level risk distribution
 Navigation to relevant works
 
 This provides a geographic perspective on monitoring priorities.
-
 🔬 6. Investigation Workspace
-
 The Investigation Workspace brings the information required to review an individual work into one place.
 
 It can contain:
@@ -105,18 +95,17 @@ Review status
 Example workflow:
 
 Potentially High-Risk Work
-          ↓
-      Investigation
-          ↓
-     View Evidence
-          ↓
-     AI Explanation
-          ↓
-      Human Review
-          ↓
-   Action / Resolution
+↓
+Investigation
+↓
+View Evidence
+↓
+AI Explanation
+↓
+Human Review
+↓
+Action / Resolution
 🤖 7. AI Copilot
-
 MPLADS Sentinel includes an AI Copilot designed specifically for MPLADS monitoring.
 
 Users can ask natural-language questions such as:
@@ -134,9 +123,7 @@ What evidence supports this risk classification?
 The Copilot retrieves relevant project and analytical information before generating an explanation.
 
 It is designed as an evidence-grounded monitoring assistant, rather than a generic chatbot.
-
 🔎 8. Advanced Work Search
-
 Users can search and filter available works using relevant project attributes.
 
 Possible filters include:
@@ -151,7 +138,6 @@ Anomaly status
 Available project status
 Date range where supported
 🔔 9. Monitoring Notifications
-
 The platform can provide notifications for important monitoring events, such as:
 
 Newly identified high-risk works
@@ -160,9 +146,7 @@ Potentially similar recommendations
 Works requiring review
 
 The notification system is intended to help users focus attention on relevant cases.
-
 👤 10. Authentication & Role-Based Access
-
 The platform is designed with authenticated access and role-based permissions.
 
 Possible roles include:
@@ -173,9 +157,7 @@ Reviewer
 Viewer
 
 Access to monitoring, investigation, administration, and other functionality can be controlled according to user roles.
-
 📝 11. Human-in-the-Loop Review
-
 A core principle of MPLADS Sentinel is:
 
 AI assists the reviewer; AI does not replace the reviewer.
@@ -183,59 +165,58 @@ AI assists the reviewer; AI does not replace the reviewer.
 The system identifies potential risk indicators and provides supporting evidence.
 
 The final assessment and action remain with the authorized human authority.
-
 🏗️ System Architecture
-                    MPLADS DATA
-                         │
-                         ▼
-              ┌────────────────────┐
-              │ Data Processing    │
-              │ Cleaning           │
-              │ Validation         │
-              │ Integration        │
-              └─────────┬──────────┘
-                        │
-                        ▼
-              ┌────────────────────┐
-              │ ML-Ready Dataset   │
-              └─────────┬──────────┘
-                        │
-          ┌─────────────┼─────────────┐
-          │             │             │
-          ▼             ▼             ▼
-   ┌────────────┐ ┌────────────┐ ┌───────────────┐
-   │ Isolation  │ │ Risk       │ │ Sentence      │
-   │ Forest     │ │ Scoring    │ │ Transformers  │
-   │            │ │            │ │               │
-   │ Anomalies  │ │ Risk Level │ │ Similar Works │
-   └─────┬──────┘ └─────┬──────┘ └───────┬───────┘
-         │              │                │
-         └──────────────┼────────────────┘
-                        ▼
-               ┌───────────────────┐
-               │    PostgreSQL     │
-               │    SQLAlchemy     │
-               └─────────┬─────────┘
-                         │
-                         ▼
-               ┌───────────────────┐
-               │   FastAPI Backend │
-               └─────────┬─────────┘
-                         │
-        ┌────────────────┼─────────────────┐
-        │                │                 │
-        ▼                ▼                 ▼
-   ┌─────────┐    ┌─────────────┐   ┌──────────────┐
-   │ React   │    │ AI Copilot  │   │ Investigation│
-   │Dashboard│    │             │   │ Workspace    │
-   └────┬────┘    └──────┬──────┘   └──────┬───────┘
-        │                │                 │
-        └────────────────┼─────────────────┘
-                         ▼
-                ┌───────────────────┐
-                │ Human Review &    │
-                │ Decision Support  │
-                └───────────────────┘
+MPLADS DATA
+│
+▼
+┌────────────────────┐
+│ Data Processing    │
+│ Cleaning           │
+│ Validation         │
+│ Integration        │
+└─────────┬──────────┘
+│
+▼
+┌────────────────────┐
+│ ML-Ready Dataset   │
+└─────────┬──────────┘
+│
+┌─────────────┼─────────────┐
+│             │             │
+▼             ▼             ▼
+┌────────────┐ ┌────────────┐ ┌───────────────┐
+│ Isolation  │ │ Risk       │ │ Sentence      │
+│ Forest     │ │ Scoring    │ │ Transformers  │
+│            │ │            │ │               │
+│ Anomalies  │ │ Risk Level │ │ Similar Works │
+└─────┬──────┘ └─────┬──────┘ └───────┬───────┘
+│              │                │
+└──────────────┼────────────────┘
+▼
+┌───────────────────┐
+│    PostgreSQL     │
+│    SQLAlchemy     │
+└─────────┬─────────┘
+│
+▼
+┌───────────────────┐
+│   FastAPI Backend │
+└─────────┬─────────┘
+│
+┌────────────────┼─────────────────┐
+│                │                 │
+▼                ▼                 ▼
+┌─────────┐    ┌─────────────┐   ┌──────────────┐
+│ React   │    │ AI Copilot  │   │ Investigation│
+│Dashboard│    │             │   │ Workspace    │
+└────┬────┘    └──────┬──────┘   └──────┬───────┘
+│                │                 │
+└────────────────┼─────────────────┘
+▼
+┌───────────────────┐
+│ Human Review &    │
+│ Decision Support  │
+└───────────────────┘
 🛠️ Technology Stack
 Frontend
 React.js
@@ -308,7 +289,6 @@ MPLADS-Sentinel/
 └── README.md
 ⚙️ Getting Started
 Prerequisites
-
 Make sure the following are installed:
 
 Python 3.x
@@ -323,60 +303,45 @@ Docker
 Docker Compose
 Clone the Repository
 git clone <YOUR-GITHUB-REPOSITORY-URL>
+```bash
 cd MPLADS-Sentinel
 🔧 Backend Setup
-
 Create a Python virtual environment:
 
 Windows
 python -m venv venv
+```bash
 venv\Scripts\activate
 Linux / macOS
 python3 -m venv venv
+```bash
 source venv/bin/activate
-
 Install dependencies:
-
 pip install -r backend/requirements.txt
-
 Create a .env file based on .env.example.
 
 Example:
-
 DATABASE_URL=postgresql://username:password@localhost:5432/mplads_sentinel
+```bash
 SECRET_KEY=your_secret_key
+```bash
 LLM_API_KEY=your_llm_api_key
-
 Start the backend:
-
 uvicorn backend.app.main:app --reload
 🎨 Frontend Setup
-
 Navigate to the frontend:
-
 cd frontend
-
 Install dependencies:
-
 npm install
-
 Start the development server:
-
 npm run dev
 🧪 Testing
-
 Backend tests:
-
 pytest
-
 Frontend production build:
-
 npm run build
-
 The exact commands may vary according to the final project configuration.
-
 🔐 Environment Variables
-
 Sensitive credentials should never be committed to the repository.
 
 Keep the following in environment variables:
@@ -386,25 +351,23 @@ SECRET_KEY
 LLM_API_KEY
 
 A .env.example file should be used to document required variables without exposing real credentials.
-
 📊 Data Processing Pipeline
-
 The project follows a structured data-processing workflow:
 
 Raw MPLADS Data
-       ↓
+↓
 Data Inspection
-       ↓
+↓
 Cleaning
-       ↓
+↓
 Validation
-       ↓
+↓
 Standardization
-       ↓
+↓
 Integration
-       ↓
+↓
 Feature Engineering
-       ↓
+↓
 ML-Ready Dataset
 
 The pipeline focuses on:
@@ -419,10 +382,8 @@ Source/house preservation
 ML-ready feature preparation
 
 No unsupported external data should be introduced into the core MPLADS analysis.
-
 🤖 Machine Learning
 Isolation Forest
-
 Isolation Forest is used for unsupervised anomaly detection.
 
 It identifies records that exhibit patterns that are unusual relative to the available dataset.
@@ -434,9 +395,7 @@ Risk prioritization
 Monitoring analysis
 
 It is not treated as definitive evidence of misconduct.
-
 Risk Scoring
-
 MPLADS Sentinel combines available analytical indicators into a risk assessment.
 
 The system can categorize works into:
@@ -446,9 +405,7 @@ MEDIUM
 HIGH
 
 Risk scores are intended to support prioritization and human review.
-
 Semantic Similarity
-
 Sentence Transformers are used to compare work descriptions semantically.
 
 This helps identify potentially similar work recommendations.
@@ -458,25 +415,23 @@ Important:
 Semantic similarity does not prove that two works are duplicates.
 
 It is an indicator for further examination.
-
 🤖 AI Copilot Architecture
-
 The AI Copilot follows an evidence-first architecture:
 
 User Question
-      ↓
+↓
 Intent Understanding
-      ↓
+↓
 Backend Data Retrieval
-      ↓
+↓
 ML Result Retrieval
-      ↓
+↓
 Evidence Assembly
-      ↓
+↓
 LLM Explanation
-      ↓
+↓
 Grounded Response
-      ↓
+↓
 Evidence Display
 
 The LLM does not act as the source of MPLADS facts.
@@ -484,9 +439,7 @@ The LLM does not act as the source of MPLADS facts.
 Relevant project and ML information is retrieved from the application's data layer before the response is generated.
 
 This reduces the risk of unsupported responses and makes the Copilot easier to audit.
-
 🎯 Example Copilot Questions
-
 Users can ask:
 
 Why is this work classified as high risk?
@@ -506,27 +459,25 @@ Give me a summary of the current monitoring situation.
 Compare these two constituencies.
 
 The actual responses depend on the data and analytical results available in the system.
-
 🔍 Investigation Workflow
-
 MPLADS Sentinel connects AI-generated indicators with a human review process.
 
 Risk Indicator
-      ↓
+↓
 Open Work
-      ↓
+↓
 Review Risk Score
-      ↓
+↓
 Analyze Anomalies
-      ↓
+↓
 Check Similar Works
-      ↓
+↓
 View AI Explanation
-      ↓
+↓
 Inspect Evidence
-      ↓
+↓
 Human Review
-      ↓
+↓
 Review Status / Action
 
 Possible review statuses include:
@@ -537,9 +488,7 @@ REQUIRES ACTION
 CLOSED
 
 The exact workflow depends on the implemented backend authorization and review system.
-
 🛡️ Responsible AI
-
 MPLADS Sentinel is designed as an AI-assisted monitoring and decision-support system.
 
 The system does not automatically conclude that a project is:
@@ -559,9 +508,7 @@ potentially similar work recommendations
 cases that may warrant further review
 
 The final decision remains with the authorized human authority.
-
 🌐 Scalability & Future Scope
-
 The architecture developed for MPLADS can potentially be adapted to other environments where large volumes of structured project or administrative data require monitoring and prioritization.
 
 Potential future application areas include:
@@ -574,9 +521,7 @@ Enterprise project monitoring
 NGO project monitoring
 
 Such adaptations would require domain-specific datasets, features, validation, and risk definitions.
-
 🚀 Startup Potential
-
 The underlying technology can also evolve into a broader Project Risk Intelligence Platform.
 
 A future product could help organizations:
@@ -590,9 +535,7 @@ Generate explainable analytical summaries
 Interact with project data using natural language
 
 MPLADS Sentinel represents a domain-specific implementation of this broader concept.
-
 🏆 Smart India Hackathon 2026
-
 MPLADS Sentinel was developed as part of our participation in the:
 
 Smart India Hackathon 2026 – Internal Round
@@ -610,7 +553,6 @@ Smart Automation
 Team
 
 TECH SETU
-
 👥 Team Contributions
 Area	Responsibility
 Dataset	Data cleaning, validation, integration and ML-ready dataset
@@ -619,30 +561,28 @@ Backend	FastAPI, PostgreSQL, APIs and database integration
 AI/ML	Anomaly detection, risk scoring and semantic similarity
 Integration	System integration, authentication, AI Copilot, notifications, testing and deployment
 📌 Project Status
-
 The project is being developed around the following end-to-end pipeline:
 
 Dataset
-   ↓
+↓
 Data Processing
-   ↓
+↓
 Machine Learning
-   ↓
+↓
 PostgreSQL
-   ↓
+↓
 FastAPI
-   ↓
+↓
 React Frontend
-   ↓
+↓
 AI Copilot
-   ↓
+↓
 Investigation Workspace
-   ↓
+↓
 Human Review
-   ↓
+↓
 Deployment
 📈 Project Vision
-
 The long-term vision of MPLADS Sentinel is to make large-scale monitoring more:
 
 proactive
@@ -655,17 +595,13 @@ human-centered
 The core idea is simple:
 
 Do not make the authority search through every record to find where attention may be needed. Use AI to help identify the records that deserve a closer look, explain the available evidence, and let the authority make the final decision.
-
 ⚠️ Disclaimer
-
 MPLADS Sentinel is an AI-assisted monitoring and decision-support platform.
 
 Model outputs represent analytical indicators derived from the available project data. They should not be interpreted as definitive evidence of fraud, corruption, misconduct, or illegality.
 
 Final decisions and actions remain the responsibility of authorized human authorities.
-
 📄 License
-
 This project was developed as part of an academic and Smart India Hackathon initiative.
 
 A suitable open-source license may be added if the repository is intended for public distribution.
