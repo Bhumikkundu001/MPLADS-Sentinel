@@ -22,9 +22,10 @@ app = FastAPI(
     redoc_url="/redoc",
 )
 
+
 allowed_origins = os.getenv(
     "ALLOWED_ORIGINS",
-    "https://mplads-sentinel-gamma.vercel.app,http://localhost:5173,http://127.0.0.1:5173,http://localhost:5174,http://127.0.0.1:5174"
+    "https://mplads-sentinel-rho.vercel.app,https://mplads-sentinel-86tg4saht-bhumik-kundus-projects.vercel.app,https://mplads-sentinel-gamma.vercel.app,http://localhost:5173,http://127.0.0.1:5173,http://localhost:5174,http://127.0.0.1:5174"
 ).split(",")
 
 app.add_middleware(
