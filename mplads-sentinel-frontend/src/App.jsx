@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { HouseProvider } from './context/HouseContext'
 import { AuthProvider, useAuth } from './context/AuthContext'
 
-import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
 import DashboardLayout from './components/Layout/DashboardLayout'
 import Works from './pages/Works'
@@ -16,30 +15,11 @@ import Alerts from './pages/Alerts'
 import Admin from './pages/Admin'
 
 
-function ProtectedRoute({ children }) {
-  const { isAuthenticated, authLoading } = useAuth()
-
-  if (authLoading) {
-    return null
-  }
-
-  if (!isAuthenticated) {
-    return <Navigate to="/login" replace />
-  }
-
-  return children
-}
-
-
 function AdminRoute({ children }) {
-  const { isAuthenticated, isAdmin, authLoading } = useAuth()
+  const { isAdmin, authLoading } = useAuth()
 
   if (authLoading) {
     return null
-  }
-
-  if (!isAuthenticated) {
-    return <Navigate to="/login" replace />
   }
 
   if (!isAdmin) {
@@ -57,16 +37,8 @@ function App() {
         <BrowserRouter>
           <Routes>
 
-            {/* Public route */}
-            <Route path="/login" element={<Login />} />
-
-            {/* Protected application */}
             <Route
-              element={
-                <ProtectedRoute>
-                  <DashboardLayout />
-                </ProtectedRoute>
-              }
+              element={<DashboardLayout />}
             >
               <Route
                 path="/dashboard"
@@ -132,7 +104,12 @@ function App() {
             {/* Default route */}
             <Route
               path="/"
-              element={<Navigate to="/login" replace />}
+              element={<Navigate to="/dashboard" replace />}
+            />
+
+            <Route
+              path="/login"
+              element={<Navigate to="/dashboard" replace />}
             />
 
           </Routes>

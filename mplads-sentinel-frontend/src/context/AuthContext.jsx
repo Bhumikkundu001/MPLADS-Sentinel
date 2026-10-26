@@ -11,14 +11,14 @@ const AuthContext = createContext(null)
 
 export function AuthProvider({ children }) {
   const [auth, setAuth] = useState(() => api.getStoredAuth())
-  const [authLoading, setAuthLoading] = useState(true)
+  const [authLoading, setAuthLoading] = useState(
+    () => Boolean(api.getStoredAuth()?.access_token),
+  )
 
   useEffect(() => {
     const storedAuth = api.getStoredAuth()
 
     if (!storedAuth?.access_token) {
-      setAuth(null)
-      setAuthLoading(false)
       return
     }
 
@@ -54,15 +54,6 @@ export function AuthProvider({ children }) {
     }
   }, [])
 
-  const login = async (email, password) => {
-    const authData = await api.login(email, password)
-
-    api.saveAuth(authData)
-    setAuth(authData)
-
-    return authData
-  }
-
   const logout = () => {
     api.clearAuth()
     setAuth(null)
@@ -73,10 +64,8 @@ export function AuthProvider({ children }) {
       auth,
       user: auth?.user || null,
       token: auth?.access_token || null,
-      isAuthenticated: Boolean(auth?.access_token),
       isAdmin: auth?.user?.role === 'admin',
       authLoading,
-      login,
       logout,
     }),
     [auth, authLoading],

@@ -60,47 +60,6 @@ function encodeWorkId(workId) {
 // Authentication
 // ============================================================
 
-async function login(email, password) {
-  const body = new URLSearchParams()
-
-  body.append('username', email)
-  body.append('password', password)
-
-  let response
-
-  try {
-    response = await fetch(`${API_BASE_URL}/auth/login`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body,
-    })
-  } catch {
-    throw new Error(SERVICE_UNAVAILABLE_MESSAGE)
-  }
-
-  if (!response.ok) {
-    if (response.status >= 500 || response.status === 0) {
-      throw new Error(SERVICE_UNAVAILABLE_MESSAGE)
-    }
-
-    let detail = ''
-
-    try {
-      const data = await response.json()
-      detail = data?.detail || ''
-    } catch {
-      // Response wasn't JSON.
-    }
-
-    throw new Error(detail || `Login failed (${response.status})`)
-  }
-
-  return response.json()
-}
-
-
 function getStoredAuth() {
   const raw = localStorage.getItem('mplads_auth')
 
@@ -135,12 +94,6 @@ function clearAuth() {
 // ============================================================
 
 export const api = {
-
-  // ----------------------------------------------------------
-  // Authentication
-  // ----------------------------------------------------------
-
-  login,
 
 async getMe() {
   return request('/auth/me')
